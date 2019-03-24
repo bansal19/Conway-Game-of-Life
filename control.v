@@ -48,7 +48,7 @@ module control(
             case (current_state)
                 S_LOAD_REG: next_state = go ? S_LOAD_REG_WAIT : (set ? S_LOAD_PRESET : S_LOAD_REG);
                 S_LOAD_REG_WAIT: next_state = go ? S_LOAD_REG_WAIT : S_LOAD_XYC; // Loop in current state until go signal goes low
-                S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_REG : S_LOAD_PRESET;              
+                S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_XYC : S_LOAD_PRESET;              
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
                 S_CYCLE_0: next_state = (count30 == 6'b011110) ? S_LOAD_REG : S_LOAD_XYC;
             default: next_state = S_LOAD_REG;
@@ -82,7 +82,7 @@ module control(
         ld_c = 1'b0;
         cycle = 1'b0;
         wren = 1'b0;
-        reset_score = 1'b1;
+        reset_score = 1'b0;
         data_write = {40{1'b0}};
                 
 
@@ -95,6 +95,7 @@ module control(
                 end
             S_LOAD_XYC: begin
                 ld_x = 1'b1;
+                ld_c = 1'b1;
                 ld_y = 1'b1;
                 cycle = 1'b1;
                 end
@@ -190,8 +191,8 @@ module control(
         .reset_n(reset30w),
         .clk(clk)
         );
-
-    assign address = (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : count30);
+    
+    assign address = (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : 5'b00000);
     ram40x32 r0(
         .address(address),
 	.clock(clk),

@@ -33,16 +33,25 @@ module part2
 	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
 	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
-	
-	wire resetn;
-	assign resetn = KEY[0];
-	
-	// Create the colour, x, y and writeEn wires that are inputs to the controller.
-	wire [2:0] colour;
+  
+        wire [2:0] colour;
 	wire [7:0] x;
 	wire [6:0] y;
-	wire writeEn;
-        wire enable,ld_x,ld_y,ld_c;
+	wire writeEn, reset_score;
+        wire enable,ld_x_wire,ld_y_wire,ld_c_wire;
+        wire [4:0] register;
+        wire [5:0] addr;
+        wire [39:0] data;
+	
+    input clk, reset_n, go, glide, explode, tumble, space, gun, clear;
+    output [2:0] colour;
+    output [7:0] x;
+    output [6:0] y;
+    output [11:0] life_score;
+
+    wire writeEn, reset_score;
+    wire enable,ld_x_wire,ld_y_wire,ld_c_wire;
+
 
 	// Create an Instance of a VGA controller - there can be only one!
 	// Define the number of colours as well as the initial background
@@ -76,27 +85,39 @@ module part2
     datapath d0(
         .clk(CLOCK_50),
         .enable(enable),
-        .reset_n(resetn),
-        .ld_x(ld_x),
-        .ld_y(ld_y),
-        .ld_c(ld_c),
-        .data_in(SW[6:0]),
-        .c_in(SW[9:7]),
+        .reset_n(KEY[1]),
+        .ld_x(ld_x_wire),
+        .ld_y(ld_y_wire),
+        .ld_c(ld_c_wire),
+        .reset_score(reset_score),
+        .register(register),
+        .addr(addr),
+        .data(data),
         .x_out(x),
         .y_out(y),
-        .c_out(colour)
+        .c_out(colour),
+        .life_score(life_score)
         );
     // Instansiate FSM control
     // control c0(...);
     control c0(
         .clk(CLOCK_50),
-        .reset_n(resetn),
-        .go(KEY[3]),
-        .KEY(KEY[1]),
+        .reset_n(KEY[1]),
+        .reset_score(reset_score),
+        .go(KEY[0]),
+        .glide(KEY[2]),
+        .explode(KEY[3]),
+        .tumble(SW[0]),
+        .space(SW[1]),
+        .gun(SW[2]),
+        .clear(SW[3]),
+        .register(register),
+        .addr(addr),
+        .data(data),        
         .enable(enable),
-        .ld_x(ld_x),
-        .ld_y(ld_y),
-        .ld_c(ld_c),
+        .ld_x(ld_x_wire),
+        .ld_y(ld_y_wire),
+        .ld_c(ld_c_wire),
         .plot(writeEn)
         );
 endmodule
