@@ -1,0 +1,241 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/h/u6/c7/05/grbickon
+vcontrol
+Z0 !s110 1553453139
+!i10b 1
+!s100 1_26UDgElTFN`CZKeYg181
+I6Llh<oGIb]d@[ISX_W`7m2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/h/u13/c7/00/bansal19/Desktop/CSC258/Project/Milestone 2
+Z3 w1553452986
+Z4 8control.v
+Z5 Fcontrol.v
+L0 3
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1553453136.000000
+Z8 !s107 ram40x32.v|control.v|datapath.v|part2.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vcounter16
+R0
+!i10b 1
+!s100 `MXHZe>3<kVYSYUASU1UK0
+IW=m_]L`YdDT69hRY2B`YQ1
+R1
+R2
+R3
+R4
+R5
+L0 221
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter17
+R0
+!i10b 1
+!s100 fCD_UWa[^8fQa;]W4J6EM2
+IFO@jGzCOfScj;=8PY:41=2
+R1
+R2
+Z12 w1553452676
+Z13 8datapath.v
+Z14 Fdatapath.v
+L0 86
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter30
+R0
+!i10b 1
+!s100 5ZR3j[<8I^ijZYgd_B8;c1
+I=S5dRoggiL]V?_f?7bFYc1
+R1
+R2
+R3
+R4
+R5
+L0 257
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter40
+R0
+!i10b 1
+!s100 >VHbYJ061?Uld=9^g7LKm2
+IY]M]?2aY<bL24M7e[R_0V2
+R1
+R2
+R3
+R4
+R5
+L0 239
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter4bit
+!s110 1552945688
+!i10b 1
+!s100 Im>jaRdTIdcFU354[E@AY1
+IZ[kDF5eCD:`[>Wg1Zz69R3
+R1
+d/h/u6/c7/05/grbickon/258/proj/lab7_part2/lab7_part2
+w1552944865
+R13
+R14
+L0 52
+R6
+r1
+!s85 0
+31
+!s108 1552945688.000000
+R8
+R9
+!i113 1
+R10
+R11
+vdatapath
+!s110 1553453138
+!i10b 1
+!s100 86f;=nS48WkFVjeVdjUon1
+I0N>CVB4UOQmLWHo=U_>;93
+R1
+R2
+R12
+R13
+R14
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vhex_decoder
+!s110 1553453140
+!i10b 1
+!s100 kh7BVSdE9^4YU714GMTF`3
+IoWT0AV;SA5gSB[0?Sf:ND3
+R1
+R2
+Z15 w1553453132
+Z16 8part2.v
+Z17 Fpart2.v
+L0 171
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpart2
+R0
+!i10b 1
+!s100 C9RD06GicSBG7EG`A<eL13
+IQ_L2XY:=fF2g>`O6Cc@>a2
+R1
+R2
+R15
+R16
+R17
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vram40x32
+R0
+!i10b 1
+!s100 BX0TKd@boOhI6BTiSjBh53
+I^MnA^4Go48_dfERTDNSNm2
+R1
+R2
+w1552945506
+8ram40x32.v
+Fram40x32.v
+L0 40
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vtry
+R0
+!i10b 1
+!s100 PQ`:Vha6_eR=[=39gZ`[23
+IH3]g8zdZcl]FlzmAnOYFh2
+R1
+R2
+R15
+R16
+R17
+L0 114
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

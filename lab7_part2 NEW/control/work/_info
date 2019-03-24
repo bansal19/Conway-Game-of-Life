@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/h/u6/c7/05/grbickon
+vcontrol
+Z0 !s110 1552937131
+!i10b 1
+!s100 a@>=2f>DhzLJRi4L@`Q:o0
+I6:?5bbO^<N[>I7j=O2LAK1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/h/u6/c7/05/grbickon/258/proj/lab7_part2/lab7_part2/control
+Z3 w1552928731
+Z4 8control.v
+Z5 Fcontrol.v
+L0 3
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1552937131.000000
+Z8 !s107 ram40x32.v|control.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|control.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vcounter16
+R0
+!i10b 1
+!s100 9a:eibNAF<fg5bQjZ?Z^Q3
+IYF@_nFgHozI9nSe6K@L`G3
+R1
+R2
+R3
+R4
+R5
+L0 140
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter30
+R0
+!i10b 1
+!s100 6aD>ROkI;nfdZIa:5G<aU0
+I;O=N`9b3aPVdoAEZkRGA:2
+R1
+R2
+R3
+R4
+R5
+L0 176
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcounter40
+R0
+!i10b 1
+!s100 n0c]zZkY2o4im7E?J5AWk0
+IT<WARK?3;Sb>i7j:4L@fe3
+R1
+R2
+R3
+R4
+R5
+L0 158
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vram40x32
+R0
+!i10b 1
+!s100 `m3031=[:QNbadXPNG_1W2
+IdZmD[eTQIHnkHF[]Z5`K_1
+R1
+R2
+w1552859363
+8ram40x32.v
+Fram40x32.v
+L0 40
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
