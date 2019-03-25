@@ -43,14 +43,8 @@ module part2
         wire [5:0] addr;
         wire [39:0] data;
 	
-    input clk, reset_n, go, glide, explode, tumble, space, gun, clear;
-    output [2:0] colour;
-    output [7:0] x;
-    output [6:0] y;
-    output [11:0] life_score;
-
-    wire writeEn, reset_score;
-    wire enable,ld_x_wire,ld_y_wire,ld_c_wire;
+    wire clk, reset_n, go, glide, explode, tumble, space, gun, clear;
+    wire [11:0] life_score;
 
 
 	// Create an Instance of a VGA controller - there can be only one!

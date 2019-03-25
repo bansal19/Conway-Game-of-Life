@@ -111,9 +111,9 @@ module control(
                 case(preset_state)
                      P_GLIDE: begin
 		        case(count30w)
-		             0: data_write = {1'b1, {39{1'b0}}};
-		             1: data_write = {1'b0, 2'b11, {37{1'b0}}};
-		             2: data_write = {2'b11, {38{1'b0}}};
+		             0: data_write = {2'b01, {38{1'b0}}};
+		             1: data_write = {2'b00, 2'b11, {36{1'b0}}};
+		             2: data_write = {3'b011, {37{1'b0}}};
 		             default: data_write = {40{1'b0}};
                         endcase
                         end
