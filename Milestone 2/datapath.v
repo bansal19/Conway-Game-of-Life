@@ -1,9 +1,8 @@
  module datapath(
-    input clk, enable, reset_n,ld_x, ld_y, ld_c,
+    input clk, enable, reset_n,ld_x, ld_y, ld_c, reset_score,
     input [4:0] register,
     input [5:0] addr,
-    input [39:0] data,
-    input reset_score, 
+    input [39:0] data, 
     output [7:0] x_out,
     output [6:0] y_out,
     output [2:0] c_out,
@@ -16,15 +15,16 @@
     wire [4:0] count; 
     wire [3:0] out;
     wire reset_c;
+    wire reset_s;
 
     localparam  S_LOAD      = 4'd0,
                 S_WRITE     = 4'd1;
     reg current_state, next_state;
 
     always @ (posedge clk) begin
-    	if(!reset_score) begin
-    		life = {12{1'b0}};
-			end
+        if (!reset_score) begin
+            life = {12{1'b0}};
+        end
         if (!reset_n) begin
             x <= 8'd0;
             y <= 7'd0;
@@ -33,7 +33,7 @@
         else begin 
             if(ld_x)
                 x <= addr * 4;
-                life <= (data[39 - addr] == 0) ? life + 1 : life;
+                life <= (data[39 - addr] == 1) ? life + 1 : life;
             if(ld_y)
                 y <= register * 4;
             if(ld_c)
@@ -100,4 +100,3 @@ module counter17(out, enable, reset_n, clk);
             end
     end 
 endmodule
-

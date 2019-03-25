@@ -10,25 +10,23 @@ module control(
     input space,
     input gun,
     input clear,
+    
 
     output register,
-	 output reg reset_score,
     output addr,
     output data, 
-    output reg  enable, ld_x, ld_y, ld_c, plot
+    output reg  enable, ld_x, ld_y, ld_c, plot, reset_score
     );
     output [39:0] data;
     output [4:0] register;
     output [5:0] addr;
     reg cycle, wren;
     reg [39:0] data_write;
-    wire reset16, reset30, reset40, enable30, enable40, set;
-    wire [3:0] count16;
-    wire [4:0] address, count30, count30w;
-    wire [5:0] count40;
-	
+    wire reset16, reset30, reset40, enable30, enable40, set, upload_reset16, upload_reset40, upload_reset30, enable_upload30;
+    wire [3:0] count16, upload_count16;
+    wire [4:0] address, count30, count30w, upload_count30;
+    wire [5:0] count40, upload_count40;
     reg [3:0] current_state, next_state, preset_state; 
-
     
     localparam  S_LOAD_REG      = 4'd0,
                 S_LOAD_REG_WAIT = 4'd1,
@@ -40,7 +38,10 @@ module control(
                 P_TUMBLE        = 4'd7,
                 P_SPACE         = 4'd8,
                 P_GUN           = 4'd9,
-                P_CLEAR         = 4'd10;
+                P_CLEAR         = 4'd10,
+                S_UPLOAD		= 4'd11,
+                S_WAIT			= 4'd12;
+                
 
     
     assign set = glide | explode | tumble | space | gun | clear;
@@ -50,9 +51,11 @@ module control(
             case (current_state)
                 S_LOAD_REG: next_state = go ? S_LOAD_REG_WAIT : (set ? S_LOAD_PRESET : S_LOAD_REG);
                 S_LOAD_REG_WAIT: next_state = go ? S_LOAD_REG_WAIT : S_LOAD_XYC; // Loop in current state until go signal goes low
-                S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_REG : S_LOAD_PRESET;              
+                S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_XYC : S_LOAD_PRESET;              
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
-                S_CYCLE_0: next_state = (count30 == 6'b011110) ? S_LOAD_REG : S_LOAD_XYC;
+                S_CYCLE_0: next_state = (count30 == 6'b011110) ? S_UPLOAD : S_LOAD_XYC;
+                S_UPLOAD: next_state = (count_30 == 6'b011110) ? S_WAIT: S_CYCLE_0;
+                S_WAIT: next_state = S_LOAD_XYC;
             default: next_state = S_LOAD_REG;
         endcase
     end // state_table
@@ -70,7 +73,8 @@ module control(
 	    preset_state = P_GUN;
 	end else if (clear) begin
 	    preset_state = P_CLEAR;
-   end
+	end
+   
 
     // Output logic aka all of our datapath control signals
     always @(*)
@@ -83,14 +87,14 @@ module control(
         ld_c = 1'b0;
         cycle = 1'b0;
         wren = 1'b0;
-		  reset_score = 1'b1;
+        reset_score = 1'b0;
         data_write = {40{1'b0}};
                 
 
         case (current_state)
-				S_LOAD_REG: begin
-					reset_score = 1'b0;
-					end
+            S_LOAD_REG: begin
+                reset_score = 1'b0;
+                end
             S_LOAD_REG_WAIT: begin
                 cycle = 1'b0;
                 end
@@ -143,20 +147,54 @@ module control(
 			case(count30w)
 			     13: data_write = {6'b001111, {34{1'b0}}};
 			     14: data_write = {6'b010001, {34{1'b0}}};
-		         15: data_write = {6'b000001, {34{1'b0}}};
-		         16: data_write = {6'b010010, {34{1'b0}}};
+		             15: data_write = {6'b000001, {34{1'b0}}};
+		             16: data_write = {6'b010010, {34{1'b0}}};
 		             default: data_write = {40{1'b0}};
                         endcase
                         end
-                     P_GUN: data_write = {40{1'b0}}; //Bit more complicated, can include later.
+                     P_GUN: data_write = {40{1'b0}};
                      P_CLEAR: data_write = {40{1'b0}};
                      default: data_write = {40{1'b0}};
                 endcase
                 end
             end
+            		S_UPLOAD: begin
+            		//General logic for this state:
+            		
+            		end
+            
         endcase
     end
-                               
+    //USING FOR COUNTING OF S_UPLOAD STATE
+    assign upload_count16 = (current_state == S_UPLOAD) ? 1 : 0;
+    counter16 upload16(
+    	.out(upload_count16),
+    	.enable(enable),
+    	.reset_n(upload_reset16),
+    	.clk(clk)
+    	);
+    	
+    assign enable_upload40 = (upload_count16 == {4{1'b1}});
+    assign upload_reset40 = (current_state != S_UPLOAD) ? 1 : 0; 
+    counter40 upload40(
+    	.out(upload_count40),
+    	.enable(enable_upload40),
+    	.reset_n(upload_reset40),
+    	.clk(clk)
+    	);
+    	
+ 	assign enable_upload30 = ((enable_upload40 == 6'b100111) && enable40); // change if 40 not 39
+    assign upload_reset30 = (current_state != S_UPLOAD) ? 1 : 0;
+    assign tmp_register = count30;
+    counter30 c1(
+        .out(upload_count30),
+        .enable(enable_upload30),
+        .reset_n(upload_reset30),
+        .clk(clk)
+        );
+        
+    	
+    //USED FOR COUNTING                           
     assign reset16 = (current_state == S_CYCLE_0) ? 1 : 0;
     counter16 c0(
         .out(count16),
@@ -184,7 +222,7 @@ module control(
         .reset_n(reset30),
         .clk(clk)
         );
-
+        
     assign reset30w = (current_state == S_LOAD_PRESET) ? 1 : 0;
     counter30 w0(
         .out(count30w),
@@ -192,8 +230,8 @@ module control(
         .reset_n(reset30w),
         .clk(clk)
         );
-
-    assign address = (current_state == S_CYCLE_0) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : 5'b00000);
+    
+    assign address = (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : 5'b00000);
     ram40x32 r0(
         .address(address),
 	.clock(clk),
@@ -209,7 +247,7 @@ module control(
             current_state <= S_LOAD_REG;
         else begin
             if(current_state == S_CYCLE_0)
-                begin if (count30 == 6'b011110)
+                begin if (count16 == {4{1'b1}})
                     current_state <= next_state;
                 end
             else

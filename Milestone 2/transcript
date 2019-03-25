@@ -259,3 +259,41 @@ do proj.do
 # ** Warning: (vsim-3722) part2.v(129): [TFMPC] - Missing connection for port 'reset_score'.
 # ** Warning: (vsim-3015) control.v(197): [PCDPC] - Port size (8) does not match connection size (5) for port 'address'. The port definition is at: ram40x32.v(41).
 #    Time: 0 ps  Iteration: 0  Instance: /try/c0/r0 File: ram40x32.v
+do proj.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:32:02 on Mar 24,2019
+# vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
+# -- Compiling module datapath
+# -- Compiling module counter17
+# -- Compiling module ram40x32
+# -- Compiling module control
+# -- Compiling module counter16
+# -- Compiling module counter40
+# -- Compiling module counter30
+# -- Compiling module part2
+# -- Compiling module try
+# 
+# Top level modules:
+# 	part2
+# 	try
+# End time: 16:32:02 on Mar 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:32:03 on Mar 24,2019, Elapsed time: 1:46:22
+# Errors: 0, Warnings: 4
+# vsim -L altera_mf_ver try 
+# Start time: 16:32:03 on Mar 24,2019
+# Loading work.try
+# Loading work.datapath
+# Loading work.counter17
+# Loading work.control
+# Loading work.counter16
+# Loading work.counter40
+# Loading work.counter30
+# Loading work.ram40x32
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) control.v(195): [PCDPC] - Port size (8) does not match connection size (5) for port 'address'. The port definition is at: ram40x32.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /try/c0/r0 File: ram40x32.v
