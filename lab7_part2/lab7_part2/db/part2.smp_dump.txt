@@ -1,8 +1,0 @@
-
-State Machine - |part2|control:c0|current_state
-Name current_state.S_LOAD_XYC current_state.S_LOAD_PRESET current_state.S_LOAD_REG_WAIT current_state.S_LOAD_REG current_state.S_CYCLE_0 
-current_state.S_LOAD_REG 0 0 0 0 0 
-current_state.S_LOAD_REG_WAIT 0 0 1 1 0 
-current_state.S_LOAD_PRESET 0 1 0 1 0 
-current_state.S_LOAD_XYC 1 0 0 1 0 
-current_state.S_CYCLE_0 0 0 0 1 1 
