@@ -16,9 +16,10 @@ module control(
     output [39:0] data, 
     output reg  enable, ld_x, ld_y, ld_c, plot, reset_score
     );
-
-    reg cycle, wren;
-    reg [39:0] data_write;
+	 
+    reg [2:0] adj_score;
+    reg cycle, wren, check_set;
+    reg [39:0] data_write, temp_data;
     wire reset16, reset30, reset40, enable30, enable40, set;
     wire [3:0] count16;
     wire [4:0] address, count30, count30w;
@@ -36,10 +37,8 @@ module control(
                 P_SPACE         = 4'd8,
                 P_GUN           = 4'd9,
                 P_CLEAR         = 4'd10,
-					 S_WAIT_LOGIC    = 4'd11,
-					 S_LOGIC			  = 4'd12;
+					 S_LOGIC			  = 4'd11;
 
-    
     assign set = glide | explode | tumble | space | gun | clear;
     // Next state logic aka our state table
     always@(*)
@@ -49,7 +48,7 @@ module control(
                 S_LOAD_REG_WAIT: next_state = go ? S_LOAD_REG_WAIT : S_LOAD_XYC; // Loop in current state until go signal goes low
                 S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_XYC : S_LOAD_PRESET;              
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
-                S_CYCLE_0: next_state = (count30 == 6'b011110) ? S_LOAD_REG : S_LOAD_XYC;
+                S_CYCLE_0: next_state = (count30 == 6'b011110) ? (check_set ? S_LOAD_REG : S_LOGIC): S_LOAD_XYC ;
 					 S_LOGIC: next_state = (count_30logic == 6'b011110) ? S_CYCLE_0 : S_LOGIC;
             default: next_state = S_LOAD_REG;
         endcase
@@ -84,11 +83,13 @@ module control(
         wren = 1'b0;
         reset_score = 1'b0;
         data_write = {40{1'b0}};
+		  adj_score = 3'b000;
                 
 
         case (current_state)
             S_LOAD_REG: begin
                 reset_score = 1'b0;
+					 check_set = 1'b0;
                 end
             S_LOAD_REG_WAIT: begin
                 cycle = 1'b0;
@@ -107,6 +108,7 @@ module control(
             S_LOAD_PRESET: begin
                 wren = 1'b1;
                 enable = 1'b1;
+					 check_set = 1'b1;
                 begin
                 case(preset_state)
                      P_GLIDE: begin
@@ -153,6 +155,10 @@ module control(
                 endcase
                 end
             end
+				S_LOGIC: begin
+					temp_data = data_write;
+					 
+				end
         endcase
     end
                                
@@ -200,6 +206,7 @@ module control(
 	.wren(wren),
 	.q(data)
         );
+	//Counters for S_LOGIC
 
     // current_state registers
     always@(posedge clk)
