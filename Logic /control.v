@@ -157,58 +157,49 @@ module control(
             end
 				S_LOGIC: begin
 					case(count_logic16)
-					0: if((count30 - 1'b1) > 0) begin
+					0: if((count30 - 1'b1) > 0)
 						register_logic = count30 - 1;
-						end
 					1: reg_above = data;
 					2: register_logic = count30;
 					3:	current_reg = data;
-					4: if((count30 + 1'b1) < 29) begin
+					4: if((count30 + 1'b1) < 29
 						register_logic = count30 + 1;
 						end
 					5: reg_below = data;
 					6: if ((count30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
-							if ((count40 - 1'b1) > 0) begin
-								 adj_score = (reg_above[39 - count40 - 1]) ? adj_score + 1: adj_score;
-							end	 
+							if ((count40 - 1'b1) > 0)
+								 adj_score = (reg_above[39 - count40 - 1]) ? adj_score + 1: adj_score;	 
 							adj_score = (reg_above[39 - count40]) ? adj_score + 1: adj_score;
 							
-							if ((count40 + 1'b1) < 40) begin
+							if ((count40 + 1'b1) < 40) 
 								 adj_score = (reg_above[39 - count40 + 1]) ? adj_score + 1: adj_score;
-							end
 						end
 						
-						if ((count40 - 1'b1) > 0) begin 
+						if ((count40 - 1'b1) > 1'b0) 
 						    adj_score = (data[39 - count40 - 1]) ? adj_score + 1 : adj_score;
-						end
-						if ((count40 + 1'b1) < 40) begin 
+						if ((count40 + 1'b1) < 40) 
 						    adj_score = (data[39 - count40 + 1]_ ? adj_score + 1 : adj_score;
-						end
+						
 						
 						if ((count30 + 1'b1) < 30) begin //Check if below register exists, sub-checks to check columns
-							if ((count40 - 1'b1) > 0) begin
+							if ((count40 - 1'b1) > 0) 
 								adj_score = (reg_below[39 - count40 - 1]) ? adj_score + 1 : adj_score;
-							end
 							adj_score = (reg_below[39 - count40]) ? adj_score + 1 : adj_score;
-							if ((count40 + 1'b1) < 40) begin
+							if ((count40 + 1'b1) < 40) 
 								adj_score = (reg_below[39 - count40 + 1]) ? adj_score + 1 : adj_score;
-							end
 						end
 						//LOGIC OF THE GAME
 						if(data[39 - count40] == 1) begin
-							if(adj_score < 3'b010) begin //Any live cell with fewer than 2 live neighbors dies
+							if(adj_score < 3'b010) //Any live cell with fewer than 2 live neighbors dies
 								data[39 - count40] = 1'b0;
-							end else if((adj_score == 3'b010) || (adj_score == 3'b011)) begin //Any live cell with two or three live neighbors lives on to the next generation
+							else if((adj_score == 3'b010) || (adj_score == 3'b011)) //Any live cell with two or three live neighbors lives on to the next generation
 								data[39 - count40] = 1'b1;
-							end else begin
+							else
 								data[39 - count40] = 1'b0; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
-							end
 						end else begin
-							if(adj_score == 3'b011) begin
+							if(adj_score == 3'b011)
 								data[39 - count40] == 1'b1; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
-							end
 						end
-					default: //FILL WITH NOTHING
 					endcase
 					 
 				end
@@ -217,7 +208,7 @@ module control(
     end
 	
 		assign enable_logic16 = (current_state == S_LOGIC);
-		assign reset_logic16 = (count_logic16 == 4'b1000) 1'b1 : 1'b0;
+		assign reset_logic16 = (count_logic16 == 4'b1000) ? 1'b1 : 1'b0;
 		counter16 logic_1(
 		.out(count_logic16),
 		.enable(enable_logic16),
