@@ -19,9 +19,9 @@ module control(
 	 
     reg [2:0] adj_score;
     reg cycle, wren, check_set;
-    reg [39:0] data_write, temp_data;
-    wire reset16, reset30, reset40, enable30, enable40, set;
-    wire [3:0] count16;
+    reg [39:0] data_write, reg_above, reg_below, current_reg, temp_reg;
+    wire reset16, reset30, reset40, enable30, enable40, set, reset_logic16, enable_logic16;
+    wire [3:0] count16, count_logic16;
     wire [4:0] address, count30, count30w;
     wire [5:0] count40;
     reg [3:0] current_state, next_state, preset_state; 
@@ -156,12 +156,75 @@ module control(
                 end
             end
 				S_LOGIC: begin
-					temp_data = data_write;
+					case(count_logic16)
+					0: if((count30 - 1'b1) > 0) begin
+						register_logic = count30 - 1;
+						end
+					1: reg_above = data;
+					2: register_logic = count30;
+					3:	current_reg = data;
+					4: if((count30 + 1'b1) < 29) begin
+						register_logic = count30 + 1;
+						end
+					5: reg_below = data;
+					6: if ((count30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
+							if ((count40 - 1'b1) > 0) begin
+								 adj_score = (reg_above[39 - count40 - 1]) ? adj_score + 1: adj_score;
+							end	 
+							adj_score = (reg_above[39 - count40]) ? adj_score + 1: adj_score;
+							
+							if ((count40 + 1'b1) < 40) begin
+								 adj_score = (reg_above[39 - count40 + 1]) ? adj_score + 1: adj_score;
+							end
+						end
+						
+						if ((count40 - 1'b1) > 0) begin 
+						    adj_score = (data[39 - count40 - 1]) ? adj_score + 1 : adj_score;
+						end
+						if ((count40 + 1'b1) < 40) begin 
+						    adj_score = (data[39 - count40 + 1]_ ? adj_score + 1 : adj_score;
+						end
+						
+						if ((count30 + 1'b1) < 30) begin //Check if below register exists, sub-checks to check columns
+							if ((count40 - 1'b1) > 0) begin
+								adj_score = (reg_below[39 - count40 - 1]) ? adj_score + 1 : adj_score;
+							end
+							adj_score = (reg_below[39 - count40]) ? adj_score + 1 : adj_score;
+							if ((count40 + 1'b1) < 40) begin
+								adj_score = (reg_below[39 - count40 + 1]) ? adj_score + 1 : adj_score;
+							end
+						end
+						//LOGIC OF THE GAME
+						if(data[39 - count40] == 1) begin
+							if(adj_score < 3'b010) begin //Any live cell with fewer than 2 live neighbors dies
+								data[39 - count40] = 1'b0;
+							end else if((adj_score == 3'b010) || (adj_score == 3'b011)) begin //Any live cell with two or three live neighbors lives on to the next generation
+								data[39 - count40] = 1'b1;
+							end else begin
+								data[39 - count40] = 1'b0; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
+							end
+						end else begin
+							if(adj_score == 3'b011) begin
+								data[39 - count40] == 1'b1; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+							end
+						end
+					default: //FILL WITH NOTHING
+					endcase
 					 
 				end
-        endcase
+					
+		  endcase
     end
-                               
+	
+		assign enable_logic16 = (current_state == S_LOGIC);
+		assign reset_logic16 = (count_logic16 == 4'b1000) 1'b1 : 1'b0;
+		counter16 logic_1(
+		.out(count_logic16),
+		.enable(enable_logic16),
+		.reset_n(reset_logic16),
+		.clk(clk)
+		);
+					
     assign reset16 = (current_state == S_CYCLE_0) ? 1 : 0;
     counter16 c0(
         .out(count16),
@@ -198,9 +261,9 @@ module control(
         .clk(clk)
         );
     
-    assign address = (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : 5'b00000);
+    assign address = current_state == S_LOGIC ? register_logic:((current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : ((current_state == S_LOAD_PRESET) ? count30w : 5'b00000));
     ram40x32 r0(
-        .address(address),
+   .address(address),
 	.clock(clk),
 	.data(data_write),
 	.wren(wren),
