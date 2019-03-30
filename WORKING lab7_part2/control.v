@@ -12,7 +12,7 @@ module control(
     
 
     output [4:0] register,
-    output [5:0] addr,
+    output [5:0] addr, 
     output [39:0] data, 
     output reg  enable, ld_x, ld_y, ld_c, plot, reset_score
     );
