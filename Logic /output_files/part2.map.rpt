@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Sat Mar 30 17:41:52 2019
+Sat Mar 30 18:07:20 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,20 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
+  6. Source assignments for control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated
+  7. Parameter Settings for User Entity Instance: vga_adapter:VGA
+  8. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+  9. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 10. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 11. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 12. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 13. Parameter Settings for User Entity Instance: control:c0|ram40x32:r0|altsyncram:altsyncram_component
+ 14. Port Connectivity Checks: "control:c0|ram40x32:r0"
+ 15. Port Connectivity Checks: "datapath:d0|counter17:c0"
+ 16. Port Connectivity Checks: "datapath:d0"
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,7 +50,7 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sat Mar 30 17:41:52 2019           ;
+; Analysis & Synthesis Status ; Failed - Sat Mar 30 18:07:20 2019           ;
 ; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name               ; part2                                       ;
 ; Top-level Entity Name       ; part2                                       ;
@@ -155,43 +168,1004 @@ agreement for further details.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------+
+; Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------+
+; Assignment                      ; Value              ; From ; To                             ;
++---------------------------------+--------------------+------+--------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
++---------------------------------+--------------------+------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA ;
++-------------------------+-----------+------------------------+
+; Parameter Name          ; Value     ; Type                   ;
++-------------------------+-----------+------------------------+
+; BITS_PER_COLOUR_CHANNEL ; 1         ; Signed Integer         ;
+; MONOCHROME              ; FALSE     ; String                 ;
+; RESOLUTION              ; 160x120   ; String                 ;
+; BACKGROUND_IMAGE        ; black.mif ; String                 ;
++-------------------------+-----------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator ;
++----------------+---------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                           ;
++----------------+---------+--------------------------------------------------------------------------------+
+; RESOLUTION     ; 160x120 ; String                                                                         ;
++----------------+---------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory ;
++------------------------------------+----------------------+-------------------------+
+; Parameter Name                     ; Value                ; Type                    ;
++------------------------------------+----------------------+-------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                 ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                 ;
+; WIDTH_A                            ; 3                    ; Signed Integer          ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer          ;
+; NUMWORDS_A                         ; 19200                ; Signed Integer          ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                 ;
+; WIDTH_B                            ; 3                    ; Signed Integer          ;
+; WIDTHAD_B                          ; 15                   ; Signed Integer          ;
+; NUMWORDS_B                         ; 19200                ; Signed Integer          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                 ;
+; OUTDATA_REG_B                      ; CLOCK1               ; Untyped                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                 ;
+; INIT_FILE                          ; black.mif            ; Untyped                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                 ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                 ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                 ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                 ;
+; CBXI_PARAMETER                     ; altsyncram_m6m1      ; Untyped                 ;
++------------------------------------+----------------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component ;
++-------------------------------+-------------------+------------------------------------------------+
+; Parameter Name                ; Value             ; Type                                           ;
++-------------------------------+-------------------+------------------------------------------------+
+; OPERATION_MODE                ; NORMAL            ; Untyped                                        ;
+; PLL_TYPE                      ; FAST              ; Untyped                                        ;
+; LPM_HINT                      ; UNUSED            ; Untyped                                        ;
+; QUALIFY_CONF_DONE             ; OFF               ; Untyped                                        ;
+; COMPENSATE_CLOCK              ; CLK0              ; Untyped                                        ;
+; SCAN_CHAIN                    ; LONG              ; Untyped                                        ;
+; PRIMARY_CLOCK                 ; INCLK0            ; Untyped                                        ;
+; INCLK0_INPUT_FREQUENCY        ; 20000             ; Signed Integer                                 ;
+; INCLK1_INPUT_FREQUENCY        ; 0                 ; Untyped                                        ;
+; GATE_LOCK_SIGNAL              ; NO                ; Untyped                                        ;
+; GATE_LOCK_COUNTER             ; 0                 ; Untyped                                        ;
+; LOCK_HIGH                     ; 1                 ; Untyped                                        ;
+; LOCK_LOW                      ; 1                 ; Untyped                                        ;
+; VALID_LOCK_MULTIPLIER         ; 1                 ; Untyped                                        ;
+; INVALID_LOCK_MULTIPLIER       ; 5                 ; Untyped                                        ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF               ; Untyped                                        ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF               ; Untyped                                        ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF               ; Untyped                                        ;
+; SKIP_VCO                      ; OFF               ; Untyped                                        ;
+; SWITCH_OVER_COUNTER           ; 0                 ; Untyped                                        ;
+; SWITCH_OVER_TYPE              ; AUTO              ; Untyped                                        ;
+; FEEDBACK_SOURCE               ; EXTCLK0           ; Untyped                                        ;
+; BANDWIDTH                     ; 0                 ; Untyped                                        ;
+; BANDWIDTH_TYPE                ; AUTO              ; Untyped                                        ;
+; SPREAD_FREQUENCY              ; 0                 ; Untyped                                        ;
+; DOWN_SPREAD                   ; 0                 ; Untyped                                        ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF               ; Untyped                                        ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF               ; Untyped                                        ;
+; CLK9_MULTIPLY_BY              ; 0                 ; Untyped                                        ;
+; CLK8_MULTIPLY_BY              ; 0                 ; Untyped                                        ;
+; CLK7_MULTIPLY_BY              ; 0                 ; Untyped                                        ;
+; CLK6_MULTIPLY_BY              ; 0                 ; Untyped                                        ;
+; CLK5_MULTIPLY_BY              ; 1                 ; Untyped                                        ;
+; CLK4_MULTIPLY_BY              ; 1                 ; Untyped                                        ;
+; CLK3_MULTIPLY_BY              ; 1                 ; Untyped                                        ;
+; CLK2_MULTIPLY_BY              ; 1                 ; Untyped                                        ;
+; CLK1_MULTIPLY_BY              ; 1                 ; Untyped                                        ;
+; CLK0_MULTIPLY_BY              ; 1                 ; Signed Integer                                 ;
+; CLK9_DIVIDE_BY                ; 0                 ; Untyped                                        ;
+; CLK8_DIVIDE_BY                ; 0                 ; Untyped                                        ;
+; CLK7_DIVIDE_BY                ; 0                 ; Untyped                                        ;
+; CLK6_DIVIDE_BY                ; 0                 ; Untyped                                        ;
+; CLK5_DIVIDE_BY                ; 1                 ; Untyped                                        ;
+; CLK4_DIVIDE_BY                ; 1                 ; Untyped                                        ;
+; CLK3_DIVIDE_BY                ; 1                 ; Untyped                                        ;
+; CLK2_DIVIDE_BY                ; 1                 ; Untyped                                        ;
+; CLK1_DIVIDE_BY                ; 1                 ; Untyped                                        ;
+; CLK0_DIVIDE_BY                ; 2                 ; Signed Integer                                 ;
+; CLK9_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK8_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK7_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK6_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK5_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK4_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK3_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK2_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK1_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK0_PHASE_SHIFT              ; 0                 ; Untyped                                        ;
+; CLK5_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK4_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK3_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK2_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK1_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK0_TIME_DELAY               ; 0                 ; Untyped                                        ;
+; CLK9_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK8_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK7_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK6_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK5_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK4_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK3_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK2_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK1_DUTY_CYCLE               ; 50                ; Untyped                                        ;
+; CLK0_DUTY_CYCLE               ; 50                ; Signed Integer                                 ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                        ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                        ;
+; LOCK_WINDOW_UI                ;  0.05             ; Untyped                                        ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED            ; Untyped                                        ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED            ; Untyped                                        ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED            ; Untyped                                        ;
+; DPA_MULTIPLY_BY               ; 0                 ; Untyped                                        ;
+; DPA_DIVIDE_BY                 ; 1                 ; Untyped                                        ;
+; DPA_DIVIDER                   ; 0                 ; Untyped                                        ;
+; EXTCLK3_MULTIPLY_BY           ; 1                 ; Untyped                                        ;
+; EXTCLK2_MULTIPLY_BY           ; 1                 ; Untyped                                        ;
+; EXTCLK1_MULTIPLY_BY           ; 1                 ; Untyped                                        ;
+; EXTCLK0_MULTIPLY_BY           ; 1                 ; Untyped                                        ;
+; EXTCLK3_DIVIDE_BY             ; 1                 ; Untyped                                        ;
+; EXTCLK2_DIVIDE_BY             ; 1                 ; Untyped                                        ;
+; EXTCLK1_DIVIDE_BY             ; 1                 ; Untyped                                        ;
+; EXTCLK0_DIVIDE_BY             ; 1                 ; Untyped                                        ;
+; EXTCLK3_PHASE_SHIFT           ; 0                 ; Untyped                                        ;
+; EXTCLK2_PHASE_SHIFT           ; 0                 ; Untyped                                        ;
+; EXTCLK1_PHASE_SHIFT           ; 0                 ; Untyped                                        ;
+; EXTCLK0_PHASE_SHIFT           ; 0                 ; Untyped                                        ;
+; EXTCLK3_TIME_DELAY            ; 0                 ; Untyped                                        ;
+; EXTCLK2_TIME_DELAY            ; 0                 ; Untyped                                        ;
+; EXTCLK1_TIME_DELAY            ; 0                 ; Untyped                                        ;
+; EXTCLK0_TIME_DELAY            ; 0                 ; Untyped                                        ;
+; EXTCLK3_DUTY_CYCLE            ; 50                ; Untyped                                        ;
+; EXTCLK2_DUTY_CYCLE            ; 50                ; Untyped                                        ;
+; EXTCLK1_DUTY_CYCLE            ; 50                ; Untyped                                        ;
+; EXTCLK0_DUTY_CYCLE            ; 50                ; Untyped                                        ;
+; VCO_MULTIPLY_BY               ; 0                 ; Untyped                                        ;
+; VCO_DIVIDE_BY                 ; 0                 ; Untyped                                        ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                 ; Untyped                                        ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                 ; Untyped                                        ;
+; VCO_MIN                       ; 0                 ; Untyped                                        ;
+; VCO_MAX                       ; 0                 ; Untyped                                        ;
+; VCO_CENTER                    ; 0                 ; Untyped                                        ;
+; PFD_MIN                       ; 0                 ; Untyped                                        ;
+; PFD_MAX                       ; 0                 ; Untyped                                        ;
+; M_INITIAL                     ; 0                 ; Untyped                                        ;
+; M                             ; 0                 ; Untyped                                        ;
+; N                             ; 1                 ; Untyped                                        ;
+; M2                            ; 1                 ; Untyped                                        ;
+; N2                            ; 1                 ; Untyped                                        ;
+; SS                            ; 1                 ; Untyped                                        ;
+; C0_HIGH                       ; 0                 ; Untyped                                        ;
+; C1_HIGH                       ; 0                 ; Untyped                                        ;
+; C2_HIGH                       ; 0                 ; Untyped                                        ;
+; C3_HIGH                       ; 0                 ; Untyped                                        ;
+; C4_HIGH                       ; 0                 ; Untyped                                        ;
+; C5_HIGH                       ; 0                 ; Untyped                                        ;
+; C6_HIGH                       ; 0                 ; Untyped                                        ;
+; C7_HIGH                       ; 0                 ; Untyped                                        ;
+; C8_HIGH                       ; 0                 ; Untyped                                        ;
+; C9_HIGH                       ; 0                 ; Untyped                                        ;
+; C0_LOW                        ; 0                 ; Untyped                                        ;
+; C1_LOW                        ; 0                 ; Untyped                                        ;
+; C2_LOW                        ; 0                 ; Untyped                                        ;
+; C3_LOW                        ; 0                 ; Untyped                                        ;
+; C4_LOW                        ; 0                 ; Untyped                                        ;
+; C5_LOW                        ; 0                 ; Untyped                                        ;
+; C6_LOW                        ; 0                 ; Untyped                                        ;
+; C7_LOW                        ; 0                 ; Untyped                                        ;
+; C8_LOW                        ; 0                 ; Untyped                                        ;
+; C9_LOW                        ; 0                 ; Untyped                                        ;
+; C0_INITIAL                    ; 0                 ; Untyped                                        ;
+; C1_INITIAL                    ; 0                 ; Untyped                                        ;
+; C2_INITIAL                    ; 0                 ; Untyped                                        ;
+; C3_INITIAL                    ; 0                 ; Untyped                                        ;
+; C4_INITIAL                    ; 0                 ; Untyped                                        ;
+; C5_INITIAL                    ; 0                 ; Untyped                                        ;
+; C6_INITIAL                    ; 0                 ; Untyped                                        ;
+; C7_INITIAL                    ; 0                 ; Untyped                                        ;
+; C8_INITIAL                    ; 0                 ; Untyped                                        ;
+; C9_INITIAL                    ; 0                 ; Untyped                                        ;
+; C0_MODE                       ; BYPASS            ; Untyped                                        ;
+; C1_MODE                       ; BYPASS            ; Untyped                                        ;
+; C2_MODE                       ; BYPASS            ; Untyped                                        ;
+; C3_MODE                       ; BYPASS            ; Untyped                                        ;
+; C4_MODE                       ; BYPASS            ; Untyped                                        ;
+; C5_MODE                       ; BYPASS            ; Untyped                                        ;
+; C6_MODE                       ; BYPASS            ; Untyped                                        ;
+; C7_MODE                       ; BYPASS            ; Untyped                                        ;
+; C8_MODE                       ; BYPASS            ; Untyped                                        ;
+; C9_MODE                       ; BYPASS            ; Untyped                                        ;
+; C0_PH                         ; 0                 ; Untyped                                        ;
+; C1_PH                         ; 0                 ; Untyped                                        ;
+; C2_PH                         ; 0                 ; Untyped                                        ;
+; C3_PH                         ; 0                 ; Untyped                                        ;
+; C4_PH                         ; 0                 ; Untyped                                        ;
+; C5_PH                         ; 0                 ; Untyped                                        ;
+; C6_PH                         ; 0                 ; Untyped                                        ;
+; C7_PH                         ; 0                 ; Untyped                                        ;
+; C8_PH                         ; 0                 ; Untyped                                        ;
+; C9_PH                         ; 0                 ; Untyped                                        ;
+; L0_HIGH                       ; 1                 ; Untyped                                        ;
+; L1_HIGH                       ; 1                 ; Untyped                                        ;
+; G0_HIGH                       ; 1                 ; Untyped                                        ;
+; G1_HIGH                       ; 1                 ; Untyped                                        ;
+; G2_HIGH                       ; 1                 ; Untyped                                        ;
+; G3_HIGH                       ; 1                 ; Untyped                                        ;
+; E0_HIGH                       ; 1                 ; Untyped                                        ;
+; E1_HIGH                       ; 1                 ; Untyped                                        ;
+; E2_HIGH                       ; 1                 ; Untyped                                        ;
+; E3_HIGH                       ; 1                 ; Untyped                                        ;
+; L0_LOW                        ; 1                 ; Untyped                                        ;
+; L1_LOW                        ; 1                 ; Untyped                                        ;
+; G0_LOW                        ; 1                 ; Untyped                                        ;
+; G1_LOW                        ; 1                 ; Untyped                                        ;
+; G2_LOW                        ; 1                 ; Untyped                                        ;
+; G3_LOW                        ; 1                 ; Untyped                                        ;
+; E0_LOW                        ; 1                 ; Untyped                                        ;
+; E1_LOW                        ; 1                 ; Untyped                                        ;
+; E2_LOW                        ; 1                 ; Untyped                                        ;
+; E3_LOW                        ; 1                 ; Untyped                                        ;
+; L0_INITIAL                    ; 1                 ; Untyped                                        ;
+; L1_INITIAL                    ; 1                 ; Untyped                                        ;
+; G0_INITIAL                    ; 1                 ; Untyped                                        ;
+; G1_INITIAL                    ; 1                 ; Untyped                                        ;
+; G2_INITIAL                    ; 1                 ; Untyped                                        ;
+; G3_INITIAL                    ; 1                 ; Untyped                                        ;
+; E0_INITIAL                    ; 1                 ; Untyped                                        ;
+; E1_INITIAL                    ; 1                 ; Untyped                                        ;
+; E2_INITIAL                    ; 1                 ; Untyped                                        ;
+; E3_INITIAL                    ; 1                 ; Untyped                                        ;
+; L0_MODE                       ; BYPASS            ; Untyped                                        ;
+; L1_MODE                       ; BYPASS            ; Untyped                                        ;
+; G0_MODE                       ; BYPASS            ; Untyped                                        ;
+; G1_MODE                       ; BYPASS            ; Untyped                                        ;
+; G2_MODE                       ; BYPASS            ; Untyped                                        ;
+; G3_MODE                       ; BYPASS            ; Untyped                                        ;
+; E0_MODE                       ; BYPASS            ; Untyped                                        ;
+; E1_MODE                       ; BYPASS            ; Untyped                                        ;
+; E2_MODE                       ; BYPASS            ; Untyped                                        ;
+; E3_MODE                       ; BYPASS            ; Untyped                                        ;
+; L0_PH                         ; 0                 ; Untyped                                        ;
+; L1_PH                         ; 0                 ; Untyped                                        ;
+; G0_PH                         ; 0                 ; Untyped                                        ;
+; G1_PH                         ; 0                 ; Untyped                                        ;
+; G2_PH                         ; 0                 ; Untyped                                        ;
+; G3_PH                         ; 0                 ; Untyped                                        ;
+; E0_PH                         ; 0                 ; Untyped                                        ;
+; E1_PH                         ; 0                 ; Untyped                                        ;
+; E2_PH                         ; 0                 ; Untyped                                        ;
+; E3_PH                         ; 0                 ; Untyped                                        ;
+; M_PH                          ; 0                 ; Untyped                                        ;
+; C1_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C2_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C3_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C4_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C5_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C6_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C7_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C8_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; C9_USE_CASC_IN                ; OFF               ; Untyped                                        ;
+; CLK0_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK1_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK2_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK3_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK4_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK5_COUNTER                  ; G0                ; Untyped                                        ;
+; CLK6_COUNTER                  ; E0                ; Untyped                                        ;
+; CLK7_COUNTER                  ; E1                ; Untyped                                        ;
+; CLK8_COUNTER                  ; E2                ; Untyped                                        ;
+; CLK9_COUNTER                  ; E3                ; Untyped                                        ;
+; L0_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; L1_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; G0_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; G1_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; G2_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; G3_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; E0_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; E1_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; E2_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; E3_TIME_DELAY                 ; 0                 ; Untyped                                        ;
+; M_TIME_DELAY                  ; 0                 ; Untyped                                        ;
+; N_TIME_DELAY                  ; 0                 ; Untyped                                        ;
+; EXTCLK3_COUNTER               ; E3                ; Untyped                                        ;
+; EXTCLK2_COUNTER               ; E2                ; Untyped                                        ;
+; EXTCLK1_COUNTER               ; E1                ; Untyped                                        ;
+; EXTCLK0_COUNTER               ; E0                ; Untyped                                        ;
+; ENABLE0_COUNTER               ; L0                ; Untyped                                        ;
+; ENABLE1_COUNTER               ; L0                ; Untyped                                        ;
+; CHARGE_PUMP_CURRENT           ; 2                 ; Untyped                                        ;
+; LOOP_FILTER_R                 ;  1.000000         ; Untyped                                        ;
+; LOOP_FILTER_C                 ; 5                 ; Untyped                                        ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999              ; Untyped                                        ;
+; LOOP_FILTER_R_BITS            ; 9999              ; Untyped                                        ;
+; LOOP_FILTER_C_BITS            ; 9999              ; Untyped                                        ;
+; VCO_POST_SCALE                ; 0                 ; Untyped                                        ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                        ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                        ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                        ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone II        ; Untyped                                        ;
+; PORT_CLKENA0                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKENA1                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKENA2                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKENA3                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKENA4                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKENA5                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLK0                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLK1                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLK2                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_EXTCLK3                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKBAD0                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKBAD1                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK0                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK1                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK2                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK3                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK4                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK5                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLK6                     ; PORT_UNUSED       ; Untyped                                        ;
+; PORT_CLK7                     ; PORT_UNUSED       ; Untyped                                        ;
+; PORT_CLK8                     ; PORT_UNUSED       ; Untyped                                        ;
+; PORT_CLK9                     ; PORT_UNUSED       ; Untyped                                        ;
+; PORT_SCANDATA                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANDATAOUT              ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANDONE                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_ACTIVECLOCK              ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKLOSS                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_INCLK1                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_INCLK0                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_FBIN                     ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PLLENA                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CLKSWITCH                ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_ARESET                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PFDENA                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANCLK                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANACLR                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANREAD                 ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANWRITE                ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_LOCKED                   ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_CONFIGUPDATE             ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PHASEDONE                ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PHASESTEP                ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PHASEUPDOWN              ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_SCANCLKENA               ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_PHASECOUNTERSELECT       ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY ; Untyped                                        ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY ; Untyped                                        ;
+; M_TEST_SOURCE                 ; 5                 ; Untyped                                        ;
+; C0_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C1_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C2_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C3_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C4_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C5_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C6_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C7_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C8_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; C9_TEST_SOURCE                ; 5                 ; Untyped                                        ;
+; CBXI_PARAMETER                ; altpll_80u        ; Untyped                                        ;
+; VCO_FREQUENCY_CONTROL         ; AUTO              ; Untyped                                        ;
+; VCO_PHASE_SHIFT_STEP          ; 0                 ; Untyped                                        ;
+; WIDTH_CLOCK                   ; 6                 ; Untyped                                        ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                 ; Untyped                                        ;
+; USING_FBMIMICBIDIR_PORT       ; OFF               ; Untyped                                        ;
+; DEVICE_FAMILY                 ; Cyclone V         ; Untyped                                        ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED            ; Untyped                                        ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF               ; Untyped                                        ;
+; AUTO_CARRY_CHAINS             ; ON                ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS          ; OFF               ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS           ; ON                ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS        ; OFF               ; IGNORE_CASCADE                                 ;
++-------------------------------+-------------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller ;
++-------------------------+------------+-------------------------------------------------+
+; Parameter Name          ; Value      ; Type                                            ;
++-------------------------+------------+-------------------------------------------------+
+; BITS_PER_COLOUR_CHANNEL ; 1          ; Signed Integer                                  ;
+; MONOCHROME              ; FALSE      ; String                                          ;
+; RESOLUTION              ; 160x120    ; String                                          ;
+; C_VERT_NUM_PIXELS       ; 0111100000 ; Unsigned Binary                                 ;
+; C_VERT_SYNC_START       ; 0111101101 ; Unsigned Binary                                 ;
+; C_VERT_SYNC_END         ; 0111101110 ; Unsigned Binary                                 ;
+; C_VERT_TOTAL_COUNT      ; 1000001101 ; Unsigned Binary                                 ;
+; C_HORZ_NUM_PIXELS       ; 1010000000 ; Unsigned Binary                                 ;
+; C_HORZ_SYNC_START       ; 1010010011 ; Unsigned Binary                                 ;
+; C_HORZ_SYNC_END         ; 1011110010 ; Unsigned Binary                                 ;
+; C_HORZ_TOTAL_COUNT      ; 1100100000 ; Unsigned Binary                                 ;
++-------------------------+------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator ;
++----------------+---------+----------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                     ;
++----------------+---------+----------------------------------------------------------------------------------------------------------+
+; RESOLUTION     ; 160x120 ; String                                                                                                   ;
++----------------+---------+----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control:c0|ram40x32:r0|altsyncram:altsyncram_component ;
++------------------------------------+--------------------------------------------+-------------------+
+; Parameter Name                     ; Value                                      ; Type              ;
++------------------------------------+--------------------------------------------+-------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped           ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY      ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE    ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped           ;
+; OPERATION_MODE                     ; SINGLE_PORT                                ; Untyped           ;
+; WIDTH_A                            ; 40                                         ; Signed Integer    ;
+; WIDTHAD_A                          ; 5                                          ; Signed Integer    ;
+; NUMWORDS_A                         ; 32                                         ; Signed Integer    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped           ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped           ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped           ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped           ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped           ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped           ;
+; WIDTH_B                            ; 1                                          ; Untyped           ;
+; WIDTHAD_B                          ; 1                                          ; Untyped           ;
+; NUMWORDS_B                         ; 1                                          ; Untyped           ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped           ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped           ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped           ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped           ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped           ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped           ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped           ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped           ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped           ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped           ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped           ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Signed Integer    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped           ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped           ;
+; BYTE_SIZE                          ; 8                                          ; Untyped           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped           ;
+; INIT_FILE                          ; ./258/proj/lab7_part2/lab7_part2/white.mif ; Untyped           ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped           ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                     ; Untyped           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                     ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped           ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped           ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped           ;
+; DEVICE_FAMILY                      ; Cyclone V                                  ; Untyped           ;
+; CBXI_PARAMETER                     ; altsyncram_m0r1                            ; Untyped           ;
++------------------------------------+--------------------------------------------+-------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "control:c0|ram40x32:r0" ;
++--------------+-------+----------+------------------+
+; Port         ; Type  ; Severity ; Details          ;
++--------------+-------+----------+------------------+
+; data[33..24] ; Input ; Info     ; Stuck at GND     ;
+; data[16..0]  ; Input ; Info     ; Stuck at GND     ;
+; data[39]     ; Input ; Info     ; Stuck at GND     ;
++--------------+-------+----------+------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:d0|counter17:c0"                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; out[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:d0"                                                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; life_score ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Mar 30 17:41:38 2019
+    Info: Processing started: Sat Mar 30 18:07:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10170): Verilog HDL syntax error at control.v(166) near text: "register_logic";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 166
-Error (10170): Verilog HDL syntax error at control.v(178) near text: "if";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 178
-Error (10170): Verilog HDL syntax error at control.v(180) near text: "if";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 180
-Error (10170): Verilog HDL syntax error at control.v(184) near text: "if";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 184
-Error (10170): Verilog HDL syntax error at control.v(187) near text: "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 187
-Error (10170): Verilog HDL syntax error at control.v(188) near text: "if";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 188
-Error (10170): Verilog HDL syntax error at control.v(190) near text: "end";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 190
-Error (10170): Verilog HDL syntax error at control.v(208) near text: "end"; "end" without "begin" . Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 208
-Error (10170): Verilog HDL syntax error at control.v(211) near text: ";";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 211
-Error (10170): Verilog HDL syntax error at control.v(255) near text: ";";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 255
-Error (10170): Verilog HDL syntax error at control.v(281) near text: ")";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 281
-Error (10170): Verilog HDL syntax error at control.v(282) near text: ";";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 282
-Error (10170): Verilog HDL syntax error at control.v(299) near text: ")";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 299
-Error (10170): Verilog HDL syntax error at control.v(300) near text: ";";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 300
-Error (10170): Verilog HDL syntax error at control.v(317) near text: ")";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 317
-Error (10170): Verilog HDL syntax error at control.v(318) near text: ";";  expecting ":", or ",". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 318
-Info (12021): Found 0 design units, including 0 entities, in source file control.v
+Info (12021): Found 4 design units, including 4 entities, in source file control.v
+    Info (12023): Found entity 1: control File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 2
+    Info (12023): Found entity 2: counter16 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 287
+    Info (12023): Found entity 3: counter40 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 305
+    Info (12023): Found entity 4: counter30 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 323
 Info (12021): Found 2 design units, including 2 entities, in source file datapath.v
     Info (12023): Found entity 1: datapath File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 1
     Info (12023): Found entity 2: counter17 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 86
 Info (12021): Found 2 design units, including 2 entities, in source file part2.v
     Info (12023): Found entity 1: part2 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 4
     Info (12023): Found entity 2: try File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 118
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 16 errors, 1 warning
-    Error: Peak virtual memory: 940 megabytes
-    Error: Processing ended: Sat Mar 30 17:41:52 2019
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:22
+Warning (10236): Verilog HDL Implicit Net warning at control.v(253): created implicit net for "reset30w" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 253
+Info (12127): Elaborating entity "part2" for the top level hierarchy
+Warning (12125): Using design file vga_adapter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga_adapter File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 78
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 67
+Warning (12125): Using design file vga_address_translator.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga_address_translator File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_address_translator.v Line: 4
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 213
+    Info (12134): Parameter "WIDTH_A" = "3"
+    Info (12134): Parameter "WIDTH_B" = "3"
+    Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTHAD_A" = "15"
+    Info (12134): Parameter "NUMWORDS_A" = "19200"
+    Info (12134): Parameter "WIDTHAD_B" = "15"
+    Info (12134): Parameter "NUMWORDS_B" = "19200"
+    Info (12134): Parameter "OUTDATA_REG_B" = "CLOCK1"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "CLOCK_ENABLE_INPUT_A" = "BYPASS"
+    Info (12134): Parameter "CLOCK_ENABLE_INPUT_B" = "BYPASS"
+    Info (12134): Parameter "CLOCK_ENABLE_OUTPUT_B" = "BYPASS"
+    Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
+    Info (12134): Parameter "INIT_FILE" = "black.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
+    Info (12023): Found entity 1: altsyncram_m6m1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m6m1.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
+    Info (12023): Found entity 1: decode_7la File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/decode_7la.tdf Line: 23
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m6m1.tdf Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
+    Info (12023): Found entity 1: decode_01a File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/decode_01a.tdf Line: 23
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m6m1.tdf Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
+    Info (12023): Found entity 1: mux_ifb File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/mux_ifb.tdf Line: 23
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m6m1.tdf Line: 50
+Warning (12125): Using design file vga_pll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga_pll File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_pll.v Line: 36
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_pll.v Line: 53
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "pll_type" = "FAST"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "primary_clock" = "INCLK0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk0_divide_by" = "2"
+    Info (12134): Parameter "clk0_multiply_by" = "1"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
+    Info (12023): Found entity 1: altpll_80u File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altpll_80u.tdf Line: 26
+Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Warning (12125): Using design file vga_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga_controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_controller.v Line: 9
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 252
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 93
+Warning (10230): Verilog HDL assignment warning at datapath.v(35): truncated value with size 32 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 35
+Warning (10230): Verilog HDL assignment warning at datapath.v(36): truncated value with size 32 to match size of target (12) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 36
+Warning (10230): Verilog HDL assignment warning at datapath.v(38): truncated value with size 32 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 38
+Warning (10230): Verilog HDL assignment warning at datapath.v(40): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 40
+Warning (10230): Verilog HDL assignment warning at datapath.v(69): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 69
+Info (12128): Elaborating entity "counter17" for hierarchy "datapath:d0|counter17:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 76
+Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 115
+Warning (10036): Verilog HDL or VHDL warning at control.v(22): object "current_reg" assigned a value but never read File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at control.v(59): inferring latch(es) for variable "preset_state", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 59
+Warning (10230): Verilog HDL assignment warning at control.v(163): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 163
+Warning (10230): Verilog HDL assignment warning at control.v(166): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 166
+Warning (10230): Verilog HDL assignment warning at control.v(170): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 170
+Warning (10230): Verilog HDL assignment warning at control.v(176): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 176
+Warning (10230): Verilog HDL assignment warning at control.v(177): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 177
+Warning (10230): Verilog HDL assignment warning at control.v(180): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 180
+Warning (10230): Verilog HDL assignment warning at control.v(184): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 184
+Warning (10230): Verilog HDL assignment warning at control.v(186): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 186
+Warning (10230): Verilog HDL assignment warning at control.v(191): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 191
+Warning (10230): Verilog HDL assignment warning at control.v(192): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 192
+Warning (10230): Verilog HDL assignment warning at control.v(194): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 194
+Warning (10270): Verilog HDL Case Statement warning at control.v(160): incomplete case statement has no default case item File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 160
+Warning (10240): Verilog HDL Always Construct warning at control.v(76): inferring latch(es) for variable "check_set", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Warning (10240): Verilog HDL Always Construct warning at control.v(76): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Warning (10240): Verilog HDL Always Construct warning at control.v(76): inferring latch(es) for variable "reg_below", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Warning (10240): Verilog HDL Always Construct warning at control.v(76): inferring latch(es) for variable "register_logic", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Warning (10240): Verilog HDL Always Construct warning at control.v(76): inferring latch(es) for variable "reg_above", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Warning (10230): Verilog HDL assignment warning at control.v(225): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 225
+Warning (10230): Verilog HDL assignment warning at control.v(234): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 234
+Warning (10230): Verilog HDL assignment warning at control.v(244): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 244
+Warning (10230): Verilog HDL assignment warning at control.v(253): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 253
+Info (10041): Inferred latch for "reg_above[0]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[1]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[2]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[3]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[4]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[5]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[6]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[7]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[8]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[9]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[10]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[11]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[12]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[13]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[14]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[15]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[16]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[17]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[18]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[19]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[20]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[21]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[22]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[23]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[24]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[25]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[26]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[27]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[28]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[29]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[30]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[31]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[32]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[33]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[34]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[35]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[36]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[37]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[38]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_above[39]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "register_logic[0]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "register_logic[1]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "register_logic[2]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "register_logic[3]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[0]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[1]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[2]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[3]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[4]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[5]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[6]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[7]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[8]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[9]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[10]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[11]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[12]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[13]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[14]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[15]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[16]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[17]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[18]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[19]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[20]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[21]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[22]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[23]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[24]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[25]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[26]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[27]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[28]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[29]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[30]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[31]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[32]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[33]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[34]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[35]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[36]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[37]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[38]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "reg_below[39]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[0]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[1]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[2]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[3]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[4]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[5]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[6]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[7]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[8]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[9]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[10]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[11]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[12]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[13]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[14]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[15]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[16]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[17]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[18]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[19]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[20]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[21]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[22]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[23]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[24]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[25]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[26]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[27]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[28]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[29]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[30]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[31]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[32]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[33]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[34]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[35]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[36]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[37]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[38]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "data[39]" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "check_set" at control.v(76) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (10041): Inferred latch for "preset_state.P_CLEAR" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (10041): Inferred latch for "preset_state.P_GUN" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (10041): Inferred latch for "preset_state.P_SPACE" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (10041): Inferred latch for "preset_state.P_TUMBLE" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (10041): Inferred latch for "preset_state.P_EXPLODE" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (10041): Inferred latch for "preset_state.P_GLIDE" at control.v(61) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 61
+Info (12128): Elaborating entity "counter16" for hierarchy "control:c0|counter16:logic_1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 223
+Info (12128): Elaborating entity "counter40" for hierarchy "control:c0|counter40:c2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 241
+Info (12128): Elaborating entity "counter30" for hierarchy "control:c0|counter30:c1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 251
+Warning (12125): Using design file ram40x32.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ram40x32 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 40
+Info (12128): Elaborating entity "ram40x32" for hierarchy "control:c0|ram40x32:r0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 268
+Info (12128): Elaborating entity "altsyncram" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
+Info (12130): Elaborated megafunction instantiation "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
+Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsyncram_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "./258/proj/lab7_part2/lab7_part2/white.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "40"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m0r1.tdf
+    Info (12023): Found entity 1: altsyncram_m0r1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_m0r1" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Error (12014): Net "control:c0|data[39]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[39]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[39]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[38]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[38]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[38]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[37]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[37]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[37]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[36]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[36]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[36]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[35]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[35]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[35]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[34]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[34]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[34]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[33]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[33]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[33]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[32]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[32]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[32]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[31]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[31]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[31]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[30]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[30]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[30]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[29]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[29]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[29]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[28]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[28]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[28]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[27]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[27]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[27]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[26]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[26]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[26]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[25]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[25]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[25]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[24]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[24]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[24]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[23]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[23]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[23]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[22]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[22]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[22]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[21]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[21]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[21]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[20]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[20]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[20]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[19]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[19]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[19]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[18]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[18]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[18]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[17]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[17]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[17]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[16]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[16]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[16]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[15]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[15]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[15]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[14]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[14]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[14]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[13]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[13]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[13]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[12]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[12]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[12]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[11]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[11]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[11]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[10]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[10]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[10]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[9]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[9]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[9]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[8]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[8]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[8]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[7]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[7]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[7]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[6]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[6]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[6]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[5]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[5]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[5]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[4]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[4]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[4]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[3]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[3]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[3]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[2]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[2]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[2]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[1]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[1]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[1]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Error (12014): Net "control:c0|data[0]", which fans out to "control:c0|Mux3", cannot be assigned more than one value File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+    Error (12015): Net is fed by "control:c0|ram40x32:r0|q[0]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 51
+    Error (12015): Net is fed by "control:c0|data[0]$latch" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 76
+Info (144001): Generated suppressed messages file /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /output_files/part2.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 120 errors, 35 warnings
+    Error: Peak virtual memory: 1007 megabytes
+    Error: Processing ended: Sat Mar 30 18:07:20 2019
+    Error: Elapsed time: 00:00:16
+    Error: Total CPU time (on all processors): 00:00:23
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /output_files/part2.map.smsg.
 
 

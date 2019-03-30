@@ -13,7 +13,7 @@ module control(
 
     output [4:0] register,
     output [5:0] addr, 
-    output [39:0] data, 
+    output reg [39:0] data, 
     output reg  enable, ld_x, ld_y, ld_c, plot, reset_score
     );
 	 
@@ -25,6 +25,7 @@ module control(
     wire [4:0] address, count30, count30w;
     wire [5:0] count40;
     reg [3:0] current_state, next_state, preset_state; 
+	 reg  [3:0] register_logic;
     
     localparam  S_LOAD_REG      = 4'd0,
                 S_LOAD_REG_WAIT = 4'd1,
@@ -49,7 +50,7 @@ module control(
                 S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_XYC : S_LOAD_PRESET;              
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
                 S_CYCLE_0: next_state = (count30 == 6'b011110) ? (check_set ? S_LOAD_REG : S_LOGIC): S_LOAD_XYC ;
-					 S_LOGIC: next_state = (count_30logic == 6'b011110) ? S_CYCLE_0 : S_LOGIC;
+					 S_LOGIC: next_state = (count_logic16 == 6'b1000) ? S_CYCLE_0 : S_LOGIC;
             default: next_state = S_LOAD_REG;
         endcase
     end // state_table
@@ -157,16 +158,20 @@ module control(
             end
 				S_LOGIC: begin
 					case(count_logic16)
-					0: if((count30 - 1'b1) > 0)
+					0: begin 
+						if((count30 - 1'b1) > 0)
 						register_logic = count30 - 1;
+						end
 					1: reg_above = data;
 					2: register_logic = count30;
 					3:	current_reg = data;
-					4: if((count30 + 1'b1) < 29
+					4: begin 
+						if((count30 + 1'b1) < 29)
 						register_logic = count30 + 1;
 						end
 					5: reg_below = data;
-					6: if ((count30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
+					6: begin
+						if ((count30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
 							if ((count40 - 1'b1) > 0)
 								 adj_score = (reg_above[39 - count40 - 1]) ? adj_score + 1: adj_score;	 
 							adj_score = (reg_above[39 - count40]) ? adj_score + 1: adj_score;
@@ -178,7 +183,7 @@ module control(
 						if ((count40 - 1'b1) > 1'b0) 
 						    adj_score = (data[39 - count40 - 1]) ? adj_score + 1 : adj_score;
 						if ((count40 + 1'b1) < 40) 
-						    adj_score = (data[39 - count40 + 1]_ ? adj_score + 1 : adj_score;
+						    adj_score = (data[39 - count40 + 1]) ? adj_score + 1 : adj_score;
 						
 						
 						if ((count30 + 1'b1) < 30) begin //Check if below register exists, sub-checks to check columns
@@ -198,7 +203,8 @@ module control(
 								data[39 - count40] = 1'b0; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
 						end else begin
 							if(adj_score == 3'b011)
-								data[39 - count40] == 1'b1; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+								data[39 - count40] = 1'b1; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+						end
 						end
 					endcase
 					 
@@ -331,4 +337,3 @@ module counter30(out, enable, reset_n, clk);
             end
     end 
 endmodule
- 
