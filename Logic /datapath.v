@@ -40,32 +40,7 @@
                 c <= (data[39 - addr] == 0) ? 111 : 000;
          end
     end
-    /*
-    always@(posedge clk)
-    begin: state_table 
-            case (current_state)
-                S_LOAD: next_state = ld_x ? S_WRITE : S_LOAD;
-                S_WRITE: next_state = ld_x ? S_LOAD : S_WRITE;
 
-            default:     next_state = S_LOAD;
-        endcase
-    end // state_table
-
-    // current_state registers
-    always@(posedge clk)
-    begin: state_FFs
-        if(!reset_n)
-            current_state <= S_LOAD;
-        else begin
-            if(current_state == S_WRITE)
-                begin if (count == {4{1'b1}})
-                    current_state <= next_state;
-                end
-            else
-                current_state <= next_state;
-        end
-    end // state_FFS
-    */
     assign out = count; // (count != 0) ? count - 1: count;
     assign reset_c = reset_n & !ld_x & !ld_y;
     counter17 c0(
