@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Sun Mar 31 16:52:19 2019
+Sun Mar 31 16:57:02 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -84,7 +84,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar 31 16:52:18 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 31 16:57:02 2019       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
@@ -208,52 +208,52 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                         ; Library ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------+---------+
-; datapath.v                       ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v                  ;         ;
-; control.v                        ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v                   ;         ;
-; part2.v                          ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v                     ;         ;
-; onehot.v                         ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/onehot.v                    ;         ;
-; PS2_Keyboard_Controller.v        ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Keyboard_Controller.v   ;         ;
-; PS2_Mouse_Controller.v           ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Mouse_Controller.v      ;         ;
-; vga_adapter.v                    ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v               ;         ;
-; vga_address_translator.v         ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_address_translator.v    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf                   ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc            ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_mux.inc                      ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.inc                   ;         ;
-; aglobal170.inc                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/aglobal170.inc                   ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                    ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altrom.inc                       ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altram.inc                       ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altdpram.inc                     ;         ;
-; db/altsyncram_m6m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m6m1.tdf      ;         ;
-; black.mif                        ; yes             ; Auto-Found Memory Initialization File  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/black.mif                   ;         ;
-; db/decode_7la.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_7la.tdf           ;         ;
-; db/decode_01a.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_01a.tdf           ;         ;
-; db/mux_ifb.tdf                   ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/mux_ifb.tdf              ;         ;
-; vga_pll.v                        ; yes             ; Auto-Found Wizard-Generated File       ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_pll.v                   ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altpll.tdf                       ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratix_pll.inc                  ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratixii_pll.inc                ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc                ;         ;
-; db/altpll_80u.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altpll_80u.tdf           ;         ;
-; vga_controller.v                 ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_controller.v            ;         ;
-; PS2_Controller.v                 ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v            ;         ;
-; Altera_UP_PS2_Data_In.v          ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/Altera_UP_PS2_Data_In.v     ;         ;
-; Altera_UP_PS2_Command_Out.v      ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/Altera_UP_PS2_Command_Out.v ;         ;
-; ram40x32.v                       ; yes             ; Auto-Found Wizard-Generated File       ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/ram40x32.v                  ;         ;
-; db/altsyncram_m0r1.tdf           ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m0r1.tdf      ;         ;
-; lpm_decode.tdf                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.tdf                   ;         ;
-; declut.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/declut.inc                       ;         ;
-; altshift.inc                     ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altshift.inc                     ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_compare.inc                  ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_constant.inc                 ;         ;
-; db/decode_l5f.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_l5f.tdf           ;         ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; datapath.v                       ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v                  ;         ;
+; control.v                        ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v                   ;         ;
+; part2.v                          ; yes             ; User Verilog HDL File                  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v                     ;         ;
+; onehot.v                         ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/onehot.v                    ;         ;
+; PS2_Keyboard_Controller.v        ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Keyboard_Controller.v   ;         ;
+; PS2_Mouse_Controller.v           ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Mouse_Controller.v      ;         ;
+; vga_adapter.v                    ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v               ;         ;
+; vga_address_translator.v         ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_address_translator.v    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/aglobal170.inc                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_m6m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m6m1.tdf      ;         ;
+; black.mif                        ; yes             ; Auto-Found Memory Initialization File  ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/black.mif                   ;         ;
+; db/decode_7la.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_7la.tdf           ;         ;
+; db/decode_01a.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_01a.tdf           ;         ;
+; db/mux_ifb.tdf                   ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/mux_ifb.tdf              ;         ;
+; vga_pll.v                        ; yes             ; Auto-Found Wizard-Generated File       ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_pll.v                   ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; db/altpll_80u.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altpll_80u.tdf           ;         ;
+; vga_controller.v                 ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_controller.v            ;         ;
+; PS2_Controller.v                 ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v            ;         ;
+; Altera_UP_PS2_Data_In.v          ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/Altera_UP_PS2_Data_In.v     ;         ;
+; Altera_UP_PS2_Command_Out.v      ; yes             ; Auto-Found Verilog HDL File            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/Altera_UP_PS2_Command_Out.v ;         ;
+; ram40x32.v                       ; yes             ; Auto-Found Wizard-Generated File       ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/ram40x32.v                  ;         ;
+; db/altsyncram_m0r1.tdf           ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m0r1.tdf      ;         ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.tdf                      ;         ;
+; declut.inc                       ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/declut.inc                          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/altshift.inc                        ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_compare.inc                     ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                           ; /s/appspace/quartus/quartus/libraries/megafunctions/lpm_constant.inc                    ;         ;
+; db/decode_l5f.tdf                ; yes             ; Auto-Generated Megafunction            ; /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_l5f.tdf           ;         ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -1549,36 +1549,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Mar 31 16:51:58 2019
+    Info: Processing started: Sun Mar 31 16:56:45 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file datapath.v
-    Info (12023): Found entity 1: datapath File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 1
-    Info (12023): Found entity 2: counter17 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 75
+    Info (12023): Found entity 1: datapath File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 1
+    Info (12023): Found entity 2: counter17 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 75
 Info (12021): Found 6 design units, including 6 entities, in source file control.v
-    Info (12023): Found entity 1: onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/onehot.v Line: 40
-    Info (12023): Found entity 2: control File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 3
-    Info (12023): Found entity 3: counter4 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 356
-    Info (12023): Found entity 4: counter16 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 374
-    Info (12023): Found entity 5: counter40 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 392
-    Info (12023): Found entity 6: counter30 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 410
+    Info (12023): Found entity 1: onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/onehot.v Line: 40
+    Info (12023): Found entity 2: control File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 3
+    Info (12023): Found entity 3: counter4 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 356
+    Info (12023): Found entity 4: counter16 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 374
+    Info (12023): Found entity 5: counter40 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 392
+    Info (12023): Found entity 6: counter30 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 410
 Info (12021): Found 4 design units, including 4 entities, in source file part2.v
-    Info (12023): Found entity 1: keyboard_tracker File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Keyboard_Controller.v Line: 117
-    Info (12023): Found entity 2: mouse_tracker File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Mouse_Controller.v Line: 120
-    Info (12023): Found entity 3: part2 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 5
-    Info (12023): Found entity 4: try File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 162
-Warning (10236): Verilog HDL Implicit Net warning at control.v(235): created implicit net for "reset30w" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 235
+    Info (12023): Found entity 1: keyboard_tracker File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Keyboard_Controller.v Line: 117
+    Info (12023): Found entity 2: mouse_tracker File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Mouse_Controller.v Line: 120
+    Info (12023): Found entity 3: part2 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 5
+    Info (12023): Found entity 4: try File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 162
+Warning (10236): Verilog HDL Implicit Net warning at control.v(235): created implicit net for "reset30w" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 235
 Info (12127): Elaborating entity "part2" for the top level hierarchy
 Warning (12125): Using design file vga_adapter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga_adapter File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 78
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 75
+    Info (12023): Found entity 1: vga_adapter File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 78
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 75
 Warning (12125): Using design file vga_address_translator.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga_address_translator File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_address_translator.v Line: 4
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 213
+    Info (12023): Found entity 1: vga_address_translator File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_address_translator.v Line: 4
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1595,23 +1595,23 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-    Info (12023): Found entity 1: altsyncram_m6m1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m6m1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_m6m1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m6m1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_7la.tdf Line: 23
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m6m1.tdf Line: 47
+    Info (12023): Found entity 1: decode_7la File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_7la.tdf Line: 23
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m6m1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_01a.tdf Line: 23
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m6m1.tdf Line: 48
+    Info (12023): Found entity 1: decode_01a File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_01a.tdf Line: 23
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m6m1.tdf Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/mux_ifb.tdf Line: 23
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m6m1.tdf Line: 50
+    Info (12023): Found entity 1: mux_ifb File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/mux_ifb.tdf Line: 23
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m6m1.tdf Line: 50
 Warning (12125): Using design file vga_pll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga_pll File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_pll.v Line: 36
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_pll.v Line: 53
+    Info (12023): Found entity 1: vga_pll File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_pll.v Line: 36
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1624,63 +1624,63 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-    Info (12023): Found entity 1: altpll_80u File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altpll_80u.tdf Line: 26
+    Info (12023): Found entity 1: altpll_80u File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altpll_80u.tdf Line: 26
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Warning (12125): Using design file vga_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga_controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_controller.v Line: 9
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "keyboard_tracker" for hierarchy "keyboard_tracker:keycontrol" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 99
+    Info (12023): Found entity 1: vga_controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_controller.v Line: 9
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "keyboard_tracker" for hierarchy "keyboard_tracker:keycontrol" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 99
 Warning (12125): Using design file PS2_Controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: PS2_Controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v Line: 9
-Info (12128): Elaborating entity "PS2_Controller" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Keyboard_Controller.v Line: 188
+    Info (12023): Found entity 1: PS2_Controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v Line: 9
+Info (12128): Elaborating entity "PS2_Controller" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Keyboard_Controller.v Line: 188
 Warning (12125): Using design file Altera_UP_PS2_Data_In.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: Altera_UP_PS2_Data_In File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/Altera_UP_PS2_Data_In.v Line: 10
-Info (12128): Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver|Altera_UP_PS2_Data_In:PS2_Data_In" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v Line: 246
+    Info (12023): Found entity 1: Altera_UP_PS2_Data_In File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/Altera_UP_PS2_Data_In.v Line: 10
+Info (12128): Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver|Altera_UP_PS2_Data_In:PS2_Data_In" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v Line: 246
 Warning (12125): Using design file Altera_UP_PS2_Command_Out.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: Altera_UP_PS2_Command_Out File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/Altera_UP_PS2_Command_Out.v Line: 10
-Info (12128): Elaborating entity "Altera_UP_PS2_Command_Out" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver|Altera_UP_PS2_Command_Out:PS2_Command_Out" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v Line: 266
-Info (12128): Elaborating entity "mouse_tracker" for hierarchy "mouse_tracker:mouse_test" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 111
-Info (12128): Elaborating entity "PS2_Controller" for hierarchy "mouse_tracker:mouse_test|PS2_Controller:tracker2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Mouse_Controller.v Line: 165
-Warning (10230): Verilog HDL assignment warning at PS2_Controller.v(64): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v Line: 64
-Warning (10230): Verilog HDL assignment warning at PS2_Controller.v(65): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/PS2_Controller.v Line: 65
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 133
-Warning (10230): Verilog HDL assignment warning at datapath.v(37): truncated value with size 32 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 37
-Warning (10230): Verilog HDL assignment warning at datapath.v(38): truncated value with size 32 to match size of target (12) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 38
-Warning (10230): Verilog HDL assignment warning at datapath.v(40): truncated value with size 32 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 40
-Warning (10230): Verilog HDL assignment warning at datapath.v(42): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 42
-Warning (10230): Verilog HDL assignment warning at datapath.v(46): truncated value with size 10 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 46
-Warning (10230): Verilog HDL assignment warning at datapath.v(47): truncated value with size 10 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 47
-Warning (10230): Verilog HDL assignment warning at datapath.v(51): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 51
-Info (12128): Elaborating entity "counter17" for hierarchy "datapath:d0|counter17:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 58
-Info (12128): Elaborating entity "counter4" for hierarchy "datapath:d0|counter4:c1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/datapath.v Line: 65
-Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 159
-Warning (10240): Verilog HDL Always Construct warning at control.v(73): inferring latch(es) for variable "preset_state", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 73
-Warning (10270): Verilog HDL Case Statement warning at control.v(104): incomplete case statement has no default case item File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 104
-Info (10264): Verilog HDL Case Statement information at control.v(104): all case item expressions in this case statement are onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 104
-Warning (10240): Verilog HDL Always Construct warning at control.v(90): inferring latch(es) for variable "mouse", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 90
-Warning (10230): Verilog HDL assignment warning at control.v(207): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 207
-Warning (10230): Verilog HDL assignment warning at control.v(216): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 216
-Warning (10230): Verilog HDL assignment warning at control.v(226): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 226
-Warning (10230): Verilog HDL assignment warning at control.v(235): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 235
-Warning (10230): Verilog HDL assignment warning at control.v(244): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 244
-Warning (10230): Verilog HDL assignment warning at control.v(252): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 252
-Warning (10230): Verilog HDL assignment warning at control.v(260): truncated value with size 32 to match size of target (5) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 260
-Info (10041): Inferred latch for "mouse" at control.v(90) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 90
-Info (10041): Inferred latch for "preset_state.P_CLEAR" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (10041): Inferred latch for "preset_state.P_GUN" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (10041): Inferred latch for "preset_state.P_SPACE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (10041): Inferred latch for "preset_state.P_TUMBLE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (10041): Inferred latch for "preset_state.P_EXPLODE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (10041): Inferred latch for "preset_state.P_GLIDE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 75
-Info (12128): Elaborating entity "counter16" for hierarchy "control:c0|counter16:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 213
-Info (12128): Elaborating entity "counter40" for hierarchy "control:c0|counter40:c2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 223
-Info (12128): Elaborating entity "counter30" for hierarchy "control:c0|counter30:c1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 233
+    Info (12023): Found entity 1: Altera_UP_PS2_Command_Out File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/Altera_UP_PS2_Command_Out.v Line: 10
+Info (12128): Elaborating entity "Altera_UP_PS2_Command_Out" for hierarchy "keyboard_tracker:keycontrol|PS2_Controller:core_driver|Altera_UP_PS2_Command_Out:PS2_Command_Out" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v Line: 266
+Info (12128): Elaborating entity "mouse_tracker" for hierarchy "mouse_tracker:mouse_test" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 111
+Info (12128): Elaborating entity "PS2_Controller" for hierarchy "mouse_tracker:mouse_test|PS2_Controller:tracker2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Mouse_Controller.v Line: 165
+Warning (10230): Verilog HDL assignment warning at PS2_Controller.v(64): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v Line: 64
+Warning (10230): Verilog HDL assignment warning at PS2_Controller.v(65): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/PS2_Controller.v Line: 65
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 133
+Warning (10230): Verilog HDL assignment warning at datapath.v(37): truncated value with size 32 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 37
+Warning (10230): Verilog HDL assignment warning at datapath.v(38): truncated value with size 32 to match size of target (12) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 38
+Warning (10230): Verilog HDL assignment warning at datapath.v(40): truncated value with size 32 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 40
+Warning (10230): Verilog HDL assignment warning at datapath.v(42): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 42
+Warning (10230): Verilog HDL assignment warning at datapath.v(46): truncated value with size 10 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 46
+Warning (10230): Verilog HDL assignment warning at datapath.v(47): truncated value with size 10 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 47
+Warning (10230): Verilog HDL assignment warning at datapath.v(51): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 51
+Info (12128): Elaborating entity "counter17" for hierarchy "datapath:d0|counter17:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 58
+Info (12128): Elaborating entity "counter4" for hierarchy "datapath:d0|counter4:c1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/datapath.v Line: 65
+Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at control.v(73): inferring latch(es) for variable "preset_state", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 73
+Warning (10270): Verilog HDL Case Statement warning at control.v(104): incomplete case statement has no default case item File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 104
+Info (10264): Verilog HDL Case Statement information at control.v(104): all case item expressions in this case statement are onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 104
+Warning (10240): Verilog HDL Always Construct warning at control.v(90): inferring latch(es) for variable "mouse", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 90
+Warning (10230): Verilog HDL assignment warning at control.v(207): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 207
+Warning (10230): Verilog HDL assignment warning at control.v(216): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 216
+Warning (10230): Verilog HDL assignment warning at control.v(226): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 226
+Warning (10230): Verilog HDL assignment warning at control.v(235): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 235
+Warning (10230): Verilog HDL assignment warning at control.v(244): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 244
+Warning (10230): Verilog HDL assignment warning at control.v(252): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 252
+Warning (10230): Verilog HDL assignment warning at control.v(260): truncated value with size 32 to match size of target (5) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 260
+Info (10041): Inferred latch for "mouse" at control.v(90) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 90
+Info (10041): Inferred latch for "preset_state.P_CLEAR" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (10041): Inferred latch for "preset_state.P_GUN" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (10041): Inferred latch for "preset_state.P_SPACE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (10041): Inferred latch for "preset_state.P_TUMBLE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (10041): Inferred latch for "preset_state.P_EXPLODE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (10041): Inferred latch for "preset_state.P_GLIDE" at control.v(75) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 75
+Info (12128): Elaborating entity "counter16" for hierarchy "control:c0|counter16:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 213
+Info (12128): Elaborating entity "counter40" for hierarchy "control:c0|counter40:c2" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 223
+Info (12128): Elaborating entity "counter30" for hierarchy "control:c0|counter30:c1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 233
 Warning (12125): Using design file ram40x32.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: ram40x32 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/ram40x32.v Line: 40
-Info (12128): Elaborating entity "ram40x32" for hierarchy "control:c0|ram40x32:r0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 267
-Info (12128): Elaborating entity "altsyncram" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/ram40x32.v Line: 86
-Info (12130): Elaborated megafunction instantiation "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/ram40x32.v Line: 86
-Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsyncram_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/ram40x32.v Line: 86
+    Info (12023): Found entity 1: ram40x32 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/ram40x32.v Line: 40
+Info (12128): Elaborating entity "ram40x32" for hierarchy "control:c0|ram40x32:r0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 267
+Info (12128): Elaborating entity "altsyncram" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/ram40x32.v Line: 86
+Info (12130): Elaborated megafunction instantiation "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/ram40x32.v Line: 86
+Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsyncram_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/ram40x32.v Line: 86
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "./258/proj/lab7_part2/lab7_part2/white.mif"
@@ -1697,40 +1697,40 @@ Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsy
     Info (12134): Parameter "width_a" = "40"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m0r1.tdf
-    Info (12023): Found entity 1: altsyncram_m0r1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altsyncram_m0r1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_m0r1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altsyncram_m0r1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_m0r1" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "onehot" for hierarchy "control:c0|onehot:o0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/control.v Line: 351
-Info (12128): Elaborating entity "lpm_decode" for hierarchy "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/onehot.v Line: 313
-Info (12130): Elaborated megafunction instantiation "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/onehot.v Line: 313
-Info (12133): Instantiated megafunction "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/onehot.v Line: 313
+Info (12128): Elaborating entity "onehot" for hierarchy "control:c0|onehot:o0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/control.v Line: 351
+Info (12128): Elaborating entity "lpm_decode" for hierarchy "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/onehot.v Line: 313
+Info (12130): Elaborated megafunction instantiation "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/onehot.v Line: 313
+Info (12133): Instantiated megafunction "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/onehot.v Line: 313
     Info (12134): Parameter "lpm_decodes" = "64"
     Info (12134): Parameter "lpm_type" = "LPM_DECODE"
     Info (12134): Parameter "lpm_width" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_l5f.tdf
-    Info (12023): Found entity 1: decode_l5f File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/decode_l5f.tdf Line: 23
+    Info (12023): Found entity 1: decode_l5f File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/decode_l5f.tdf Line: 23
 Info (12128): Elaborating entity "decode_l5f" for hierarchy "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component|decode_l5f:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
-    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
+    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
+    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
-    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
+    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
+    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
-    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 53
+    Warning (12110): Net "x_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
+    Warning (12110): Net "y_mouse[9]" is missing source, defaulting to GND File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 53
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 35
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 35
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 46 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/output_files/part2.map.smsg
+Info (144001): Generated suppressed messages file /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/output_files/part2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/db/altpll_80u.tdf Line: 34
+Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/db/altpll_80u.tdf Line: 34
     Info: Must be connected
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 24
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/part2.v Line: 24
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 24
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/part2.v Line: 24
 Info (21057): Implemented 783 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 35 output pins
@@ -1739,15 +1739,15 @@ Info (21057): Implemented 783 device resources after synthesis - the final resou
     Info (21064): Implemented 49 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 1111 megabytes
-    Info: Processing ended: Sun Mar 31 16:52:19 2019
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 1114 megabytes
+    Info: Processing ended: Sun Mar 31 16:57:02 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Mouse Input/output_files/part2.map.smsg.
+The suppressed messages can be found in /h/u13/c7/00/bansal19/Desktop/CSC258/Project/KeyMouse Input/output_files/part2.map.smsg.
 
 
