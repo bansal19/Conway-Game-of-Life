@@ -1,5 +1,5 @@
-`include "ram40x32.v"
 `include "onehot.v"
+`include "ram40x32.v"
 
 module control(
     input clk,
@@ -22,11 +22,18 @@ module control(
     );
 
     reg [2:0] adj_score;
-    reg cycle, wren, mouse, check_set;
-    reg [39:0] data_write, reg_above, reg_below, current_reg, temp_reg;
-    wire [39:0] bitmask;
-    wire reset16, reset30, reset40, enable30, enable40, reset16m, reset16c, enable_rate, set;
-    wire reset_logic16, enable_logic40, reset_logic40, enable_logic30, reset_logic30, rate;
+    reg cycle, wren, mouse, check_set, temp_wren;
+    reg [39:0] data_write, reg_above, reg_below, current_reg, temp_write;
+    wire [39:0] bitmask, temp_data;
+    wire reset16, reset30, reset40, enable30, enable40, reset16m, reset16c, enable_rate, set, enable_swap30;
+    wire reset_logic16, enable_logic40, reset_logic40, enable_logic30, reset_logic30, rate,  enable_swap4;
+
+	wire [2:0] count_swap4;
+    wire [3:0] count16c, count16m, count16, count_logic16;
+    wire [4:0] address, count30, count30w, count_logic30, count_swap30; 
+    wire [5:0] count40, count_logic40, set_value;
+    reg [4:0] current_state, next_state, preset_state, register_logic;
+
     // One hot wires
     wire eq0, eq1, eq2, eq3, eq4, eq5, eq6, eq7, eq8, eq9, eq10, eq11, eq12, eq13;
     wire eq14, eq15, eq16, eq17, eq18, eq19, eq20, eq21, eq22, eq23, eq24, eq25, eq26;
@@ -34,11 +41,6 @@ module control(
     wire eq40, eq41, eq42, eq43, eq44, eq45, eq46, eq47, eq48, eq49, eq50, eq51, eq52;
     wire eq53, eq54, eq55, eq56, eq57, eq58, eq59, eq60, eq61, eq62, eq63;
     
-    wire [3:0] count16c, count16m, count16, count_logic16;
-    wire [4:0] address, count30, count30w, count_logic30; 
-    wire [5:0] count40, count_logic40;
-    reg [4:0] current_state, next_state, preset_state, register_logic;
-
     
     localparam  S_LOAD_REG      = 5'd0,
                 S_LOAD_REG_WAIT = 5'd1,
@@ -57,7 +59,8 @@ module control(
                 P_TUMBLE        = 5'd14,
                 P_SPACE         = 5'd15,
                 P_GUN           = 5'd16,
-                P_CLEAR         = 5'd17;
+                P_CLEAR         = 5'd17,
+				S_SWAP			= 5'd18;
 
     
     assign set = glide | explode | tumble | space | gun | clear;
@@ -68,14 +71,15 @@ module control(
                 S_LOAD_REG: next_state = go ? S_LOAD_REG_WAIT : (set ? S_LOAD_PRESET_WAIT : (mouse_click ? S_CLICK_WAIT : S_LOAD_XYC));
                 S_LOAD_REG_WAIT: next_state = go ? S_LOAD_REG_WAIT : S_LOAD_XYC; // Loop in current state until go signal goes low
                 S_CLICK_WAIT: next_state = mouse_click ? S_CLICK_WAIT : S_CLICK;
-                S_CLICK: next_state = (count16c == 4'b1111) ? S_LOAD_MOUSE : S_CLICK;
+                S_CLICK: next_state = (count16c == 4'b1111) ? S_LOAD_REG : S_CLICK;
                 S_LOAD_MOUSE: next_state = cycle ? S_PRNT_MOUSE : S_LOAD_MOUSE;
                 S_PRNT_MOUSE: next_state = (count16m == 4'b1111) ? S_LOAD_REG : S_PRNT_MOUSE;
                 S_LOAD_PRESET_WAIT: next_state = set ? S_LOAD_PRESET_WAIT : S_LOAD_PRESET;
-                S_LOAD_PRESET: next_state = (count30w == 6'b011110) ? S_LOAD_XYC : S_LOAD_PRESET;     
+                S_LOAD_PRESET: next_state = (count30w == 5'b11110) ? S_LOAD_XYC : S_LOAD_PRESET;     
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
-                S_CYCLE_0: next_state = (count30 == 6'b011110) ? (stop ? S_LOAD_REG : (mouse ? S_LOAD_MOUSE : S_LOGIC)) : S_LOAD_XYC;
-                S_LOGIC: next_state = (count_logic30 == 6'b011110) ? S_WAIT : S_LOGIC;
+                S_CYCLE_0: next_state = (count30 == 5'b11110) ? (stop ? S_LOAD_REG : (mouse ? S_LOAD_MOUSE : S_LOGIC)) : S_LOAD_XYC;
+                S_LOGIC: next_state = (count_logic30 == 5'b11110) ? S_SWAP : S_LOGIC;
+                S_SWAP: next_state = (count_swap30 == 5'b11110) ? S_WAIT : S_SWAP;
                 S_WAIT: next_state = (rate == {28{1'b0}}) ? S_LOAD_XYC : S_WAIT;
             default: next_state = S_LOAD_REG;
         endcase
@@ -112,6 +116,7 @@ module control(
         reset_score = 1'b0;
         data_write = {40{1'b0}};
         adj_score = 3'b000;
+        temp_wren = 1'b0;
                 
 
         case (current_state)
@@ -232,7 +237,7 @@ module control(
 		   end
 		5: reg_below = data;
 		6: begin
-			wren = 1'b1;
+			temp_wren = 1'b1;
 			if ((count_logic30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
 				if ((count_logic40 - 1'b1) > 0) begin
 					 adj_score = (reg_above[39 - count_logic40 - 1]) ? adj_score + 1: adj_score;
@@ -266,23 +271,49 @@ module control(
 			//LOGIC OF THE GAME
 			if(data[39 - count_logic40] == 1) begin
 				if(adj_score < 3'b010) //Any live cell with fewer than 2 live neighbors dies
-					data_write = data & !bitmask;
+					temp_write = data & !bitmask;
 				else if((adj_score == 3'b010) || (adj_score == 3'b011)) //Any live cell with two or three live neighbors lives on to the next generation
-					data_write = data | bitmask;
+					temp_write = data | bitmask;
 				else
-					data_write = data & !bitmask; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
+					temp_write = data & !bitmask; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
 			end else begin
 				if(adj_score == 3'b011)
-					data_write = data | bitmask; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+					temp_write = data | bitmask; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
 			    end
 		    end
 		endcase
               end
+              S_SWAP: begin
+					 	case(count_swap4)
+					 		0: register_logic = count_swap30;
+						 	1: begin
+						 		wren = 1'b1;
+						 		data_write = temp_data;
+								end
+						 	default: data_write = {40{1'b0}};
+						endcase
           endcase 			 
-	end					
+	end
+	//Counters for S_SWAP
+    	assign enable_swap30 = (current_state == S_SWAP);	
+	 	counter30 swap(
+	 	.out(count_swap30),
+	 	.enable(enable_swap30),
+	 	.reset_n(!enable_swap30),
+	 	.clk(clk)
+	 	);
+	 	
+	 	assign enable_swap4 = (current_state == S_SWAP);
+	 	counter4 swap4(
+	 	.out(count_swap4),
+	 	.enable(enable_swap4),
+	 	.reset_n(!enable_swap4),
+	 	.clk(clk)
+	 	);
+	 						
              
    //Counters for S_LOGIC
-    assign reset_logic16 = (current_state != S_LOGIC);
+    assign reset_logic16 = (current_state == S_LOGIC);
     counter16 c0l(
         .out(count_logic16),
         .enable(enable),
@@ -291,7 +322,7 @@ module control(
     );
 		
     assign enable_logic40 = (count_logic16 == 1'b1);
-    assign reset_logic40 = current_state != S_LOGIC;
+    assign reset_logic40 = current_state == S_LOGIC;
     counter40 c1l(
 	.out(count_logic40),
 	.enable(enable_logic40),
@@ -300,7 +331,7 @@ module control(
 	);
 		
     assign enable_logic30 = ((count_logic40 == 6'b100111) && enable_logic40);
-    assign reset_logic30 = current_state != S_LOGIC;
+    assign reset_logic30 = current_state == S_LOGIC;
     counter30 c2l(
 	.out(count_logic30),
 	.enable(enable_logic30),
@@ -309,7 +340,7 @@ module control(
 	);
 			
     //OTHER COUNTERS              
-    assign reset16 = (current_state == S_CYCLE_0) ? 1 : 0;
+    assign reset16 = (current_state == S_CYCLE_0);
     counter16 c0(
         .out(count16),
         .enable(enable),
@@ -318,7 +349,7 @@ module control(
         );
 
     assign enable40 = (count16 == {4{1'b1}});
-    assign reset40 = (current_state != S_LOAD_REG) ? 1 : 0;
+    assign reset40 = (current_state == S_CYCLE_0);
     assign addr = count40;
     counter40 c2(
         .out(count40),
@@ -328,7 +359,7 @@ module control(
         );
 
     assign enable30 = ((count40 == 6'b100111) && enable40); // change if 40 not 39
-    assign reset30 = (current_state != S_LOAD_REG) ? 1 : 0;
+    assign reset30 = (current_state == S_CYCLE_0);
     assign register = count30;
     counter30 c1(
         .out(count30),
@@ -337,7 +368,7 @@ module control(
         .clk(clk)
         );
         
-    assign reset30w = (current_state == S_LOAD_PRESET) ? 1 : 0;
+    assign reset30w = (current_state == S_LOAD_PRESET);
     counter30 w0(
         .out(count30w),
         .enable(enable),
@@ -346,7 +377,7 @@ module control(
         );
        
         
-    assign reset16m = (current_state == S_PRNT_MOUSE) ? 1 : 0;
+    assign reset16m = (current_state == S_PRNT_MOUSE);
     counter16 m0(
         .out(count16m),
         .enable(enable),
@@ -354,7 +385,7 @@ module control(
         .clk(clk)
         );
         
-    assign reset16c = (current_state == S_CLICK) ? 1 : 0;
+    assign reset16c = (current_state == S_CLICK);
     counter16 c3(
         .out(count16c),
         .enable(enable),

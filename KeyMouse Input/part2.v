@@ -37,7 +37,7 @@ module part2
 	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
   
-        wire [2:0] colour;
+   wire [2:0] colour;
 	wire [7:0] x;
 	wire [6:0] y;
 	wire writeEn, reset_score;
@@ -94,7 +94,7 @@ module part2
 		  .key4(space), 
 		  .key5(gun), 
 		  .keyc(clear), 
-		  .keys(stop), //STOP NEEDS TO BE IMPLEMENTED
+		  .keys(stop), //STOP NEEDS TO BE IMPLEMENTED in control.v
 		  .space(go)
 		  );
 	//Mouse Implementation

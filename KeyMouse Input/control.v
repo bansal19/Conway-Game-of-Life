@@ -280,7 +280,7 @@ module control(
                 current_state <= next_state;
         end
     end // state_FFS
-
+	
     
     onehot o0(
     .data(x_mouse / 4),

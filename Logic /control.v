@@ -1,5 +1,5 @@
-`include "onehot.v"
 `include "ram40x32.v"
+`include "onehot.v"
 
 module control(
     input clk,
@@ -14,21 +14,23 @@ module control(
     input clear,
     input [9:0] x_mouse, y_mouse,
     input mouse_click,
-
+	
+	output [2:0] adj,
     output [4:0] register,
     output [5:0] addr,
-    output [39:0] data, 
-    output reg  enable, ld_x, ld_y, ld_c, plot, reset_score, mouse_plot
+    output [39:0] data, t, 
+    output reg  enable, ld_x, ld_y, ld_c, plot, reset_score, mouse_plot, logic, swap
     );
 
     reg [2:0] adj_score;
     reg cycle, wren, mouse, check_set, temp_wren;
     reg [39:0] data_write, reg_above, reg_below, current_reg, temp_write;
     wire [39:0] bitmask, temp_data;
-    wire reset16, reset30, reset40, enable30, enable40, reset16m, reset16c, enable_rate, set, enable_swap30;
-    wire reset_logic16, enable_logic40, reset_logic40, enable_logic30, reset_logic30, rate,  enable_swap4;
-
-	wire [2:0] count_swap4;
+    wire reset16, reset30, reset40, enable30, enable40, reset16m, reset16c, enable_rate, set;
+    wire reset_logic16, enable_logic40, reset_logic40, enable_logic30, reset_logic30, rate;
+    wire enable_swap30, enable_swap4;
+    
+    wire [2:0] count_swap4;
     wire [3:0] count16c, count16m, count16, count_logic16;
     wire [4:0] address, count30, count30w, count_logic30, count_swap30; 
     wire [5:0] count40, count_logic40, set_value;
@@ -40,7 +42,7 @@ module control(
     wire eq27, eq28, eq29, eq30, eq31, eq32, eq33, eq34, eq35, eq36, eq37, eq38, eq39;
     wire eq40, eq41, eq42, eq43, eq44, eq45, eq46, eq47, eq48, eq49, eq50, eq51, eq52;
     wire eq53, eq54, eq55, eq56, eq57, eq58, eq59, eq60, eq61, eq62, eq63;
-    
+
     
     localparam  S_LOAD_REG      = 5'd0,
                 S_LOAD_REG_WAIT = 5'd1,
@@ -53,14 +55,14 @@ module control(
                 S_LOAD_XYC      = 5'd8,
                 S_CYCLE_0       = 5'd9,
                 S_LOGIC	        = 5'd10,
-                S_WAIT          = 5'd11,
-                P_GLIDE         = 5'd12, 
-                P_EXPLODE       = 5'd13,
-                P_TUMBLE        = 5'd14,
-                P_SPACE         = 5'd15,
-                P_GUN           = 5'd16,
-                P_CLEAR         = 5'd17,
-				S_SWAP			= 5'd18;
+                S_SWAP	        = 5'd11,
+                S_WAIT          = 5'd12,
+                P_GLIDE         = 5'd13, 
+                P_EXPLODE       = 5'd14,
+                P_TUMBLE        = 5'd15,
+                P_SPACE         = 5'd16,
+                P_GUN           = 5'd17,
+                P_CLEAR         = 5'd18;
 
     
     assign set = glide | explode | tumble | space | gun | clear;
@@ -115,8 +117,9 @@ module control(
         wren = 1'b0;
         reset_score = 1'b0;
         data_write = {40{1'b0}};
-        adj_score = 3'b000;
         temp_wren = 1'b0;
+        logic = 1'b0; // logic check
+        swap = 1'b0; // swap check
                 
 
         case (current_state)
@@ -138,7 +141,7 @@ module control(
                 end
             S_CLICK: begin
                 enable = 1'b1;
-                if (count16c == 4'b0001) begin
+                if (count16c == 4'b0010) begin
                     wren = 1'b1;
                     data_write = data ^ bitmask;
                 end
@@ -177,6 +180,7 @@ module control(
 		             17: data_write = {{17{1'b0}}, 5'b10101, {18{1'b0}}};
 		             default: data_write = {40{1'b0}};
                         endcase
+
                         end
                      P_TUMBLE: begin
 		        case(count30w)
@@ -222,97 +226,106 @@ module control(
                 end
             end
 	    S_LOGIC: begin
+	        logic = 1'b1; // logic check
 		enable = 1'b1;
 		case(count_logic16)
 		0: begin 
-			if((count_logic30 - 1'b1) > 0)
+			if(count_logic30 != 5'd0)
 			    register_logic = count_logic30 - 1;
 		   end
 		1: reg_above = data;
-		2: register_logic = count_logic30;
-		3:	current_reg = data;
-		4: begin 
-			if((count_logic30 + 1'b1) < 29)
+		2: begin 
+			if(count_logic30 != 5'd29)
 			    register_logic = count_logic30 + 1;
 		   end
-		5: reg_below = data;
+		3: begin 
+			reg_below = data;
+			adj_score = 3'b000;
+		end
+                4: register_logic = count_logic30;
+		5: current_reg = data;
 		6: begin
-			temp_wren = 1'b1;
-			if ((count_logic30 - 1'b1) > 0) begin //Check if above register exists, sub-checks to check columns
-				if ((count_logic40 - 1'b1) > 0) begin
-					 adj_score = (reg_above[39 - count_logic40 - 1]) ? adj_score + 1: adj_score;
+			if (count_logic30 != 5'd0) begin //Check if above register exists, sub-checks to check columns
+				if (count_logic40 != 6'd0) begin
+					 adj_score = (reg_above[39 - (count_logic40 - 1)]) ? (adj_score + 1): adj_score;
 			        end
-				adj_score = (reg_above[39 - count_logic40]) ? adj_score + 1: adj_score;
-				
-				if ((count_logic40 + 1'b1) < 40) begin
-					 adj_score = (reg_above[39 - count_logic40 + 1]) ? adj_score + 1: adj_score;
+				adj_score = (reg_above[39 - count_logic40]) ? (adj_score + 1): adj_score;
+				if (count_logic40 != 6'd39) begin
+					adj_score = (reg_above[39 - (count_logic40 + 1)]) ? (adj_score + 1): adj_score;
 			        end
 			end
-						
-			if ((count_logic40 - 1'b1) > 1'b0) begin
-			    adj_score = (data[39 - count_logic40 - 1]) ? adj_score + 1 : adj_score;
+					        			
+			if (count_logic40 != 6'd0) begin
+			    adj_score = (data[39 - (count_logic40 - 1)]) ? adj_score + 1 : adj_score;
 			end
-			if ((count_logic40 + 1'b1) < 40) begin
-			    adj_score = (data[39 - count_logic40 + 1]) ? adj_score + 1 : adj_score;
+			if (count_logic40 != 6'd39) begin
+			    adj_score = (data[39 - (count_logic40 + 1)]) ? adj_score + 1 : adj_score;
+
 			end
-						
-						
-			if ((count_logic30 + 1'b1) < 30) begin //Check if below register exists, sub-checks to check columns
-				if ((count_logic40 - 1'b1) > 0) begin
-					adj_score = (reg_below[39 - count_logic40 - 1]) ? adj_score + 1 : adj_score;
+							
+			if (count_logic30 != 5'd29) begin //Check if below register exists, sub-checks to check columns
+				if (count_logic40 != 6'd0) begin
+					adj_score = (reg_below[39 - (count_logic40 - 1)]) ? adj_score + 1 : adj_score;
 			        end
 			        
 				adj_score = (reg_below[39 - count_logic40]) ? adj_score + 1 : adj_score;
 
-				if ((count_logic40 + 1'b1) < 40) begin
-					adj_score = (reg_below[39 - count_logic40 + 1]) ? adj_score + 1 : adj_score;
+				if (count_logic40 != 6'd39) begin
+					adj_score = (reg_below[39 - (count_logic40 + 1)]) ? adj_score + 1 : adj_score;
 				end
 			end
 			//LOGIC OF THE GAME
 			if(data[39 - count_logic40] == 1) begin
 				if(adj_score < 3'b010) //Any live cell with fewer than 2 live neighbors dies
-					temp_write = data & !bitmask;
+					temp_write = temp_data & !bitmask;
 				else if((adj_score == 3'b010) || (adj_score == 3'b011)) //Any live cell with two or three live neighbors lives on to the next generation
-					temp_write = data | bitmask;
+					temp_write = temp_data | bitmask;
 				else
-					temp_write = data & !bitmask; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
+					temp_write = temp_data & !bitmask; //Any live cell with more than 3 live neighbors dies, as if by overpopulation
 			end else begin
 				if(adj_score == 3'b011)
-					temp_write = data | bitmask; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+					temp_write = temp_data | bitmask; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
 			    end
 		    end
+		7: temp_wren = 1'b1;
 		endcase
               end
-              S_SWAP: begin
-					 	case(count_swap4)
-					 		0: register_logic = count_swap30;
-						 	1: begin
-						 		wren = 1'b1;
-						 		data_write = temp_data;
-								end
-						 	default: data_write = {40{1'b0}};
-						endcase
+            S_SWAP: begin
+                swap = 1'b1; // swap check
+            	case(count_swap4)
+				0: begin
+					register_logic = count_swap30;
+					adj_score = 3'b110;
 					end
+	        	1:	begin
+	        		wren = 1'b1;
+					data_write = temp_data;
+					end
+				endcase
+            end
           endcase 			 
-	end
-	//Counters for S_SWAP
-    	assign enable_swap30 = (current_state == S_SWAP);	
-	 	counter30 swap(
-	 	.out(count_swap30),
-	 	.enable(enable_swap30),
-	 	.reset_n(!enable_swap30),
-	 	.clk(clk)
-	 	);
+	end					
+    
+    assign t = temp_data;
+    assign adj = adj_score;
+    
+    //Counters for S_SWAP
+    assign enable_swap30 = (current_state == S_SWAP && count_swap4 == 3'b100);	
+	counter30 swap1(
+	.out(count_swap30),
+	.enable(enable_swap30),
+	.reset_n(enable_swap4),
+	.clk(clk)
+    );
 	 	
-	 	assign enable_swap4 = (current_state == S_SWAP);
-	 	counter4 swap4(
-	 	.out(count_swap4),
-	 	.enable(enable_swap4),
-	 	.reset_n(!enable_swap4),
-	 	.clk(clk)
-	 	);
-	 						
-             
+    assign enable_swap4 = (current_state == S_SWAP);
+	counter4 swap4(
+	.out(count_swap4),
+	.enable(enable_swap4),
+	.reset_n(enable_swap4),
+        .clk(clk)
+    );
+	 	             
    //Counters for S_LOGIC
     assign reset_logic16 = (current_state == S_LOGIC);
     counter16 c0l(
@@ -322,7 +335,7 @@ module control(
         .clk(clk)
     );
 		
-    assign enable_logic40 = (count_logic16 == 1'b1);
+    assign enable_logic40 = (count_logic16 == {4{1'b1}});
     assign reset_logic40 = current_state == S_LOGIC;
     counter40 c1l(
 	.out(count_logic40),
@@ -350,7 +363,7 @@ module control(
         );
 
     assign enable40 = (count16 == {4{1'b1}});
-    assign reset40 = (current_state == S_CYCLE_0);
+    assign reset40 = (current_state != S_LOAD_REG && current_state != S_WAIT);
     assign addr = count40;
     counter40 c2(
         .out(count40),
@@ -360,7 +373,7 @@ module control(
         );
 
     assign enable30 = ((count40 == 6'b100111) && enable40); // change if 40 not 39
-    assign reset30 = (current_state == S_CYCLE_0);
+    assign reset30 = (current_state != S_LOAD_REG && current_state != S_WAIT);
     assign register = count30;
     counter30 c1(
         .out(count30),
@@ -393,14 +406,22 @@ module control(
         .reset_n(reset16c),
         .clk(clk)
         );
-    
-    assign address = (current_state == S_LOGIC) ? register_logic : (current_state == S_CLICK) ? y_mouse / 4 : (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : (current_state == S_LOAD_PRESET) ? count30w : 5'b00000;
+    //RAM modules
+    assign address = (current_state == S_LOGIC) ? register_logic : ((current_state == S_CLICK) ? y_mouse / 4 : (current_state == S_CYCLE_0 || current_state == S_LOAD_XYC || enable40) ? count30 : (current_state == S_LOAD_PRESET) ? count30w : (current_state == S_SWAP ? register_logic : 5'b00000));
     ram40x32 r0(
         .address(address),
 	.clock(clk),
 	.data(data_write),
 	.wren(wren),
 	.q(data)
+        );
+        
+    ram40x32 r1(
+        .address(register_logic),
+	.clock(clk),
+	.data(temp_write),
+	.wren(temp_wren),
+	.q(temp_data)
         );
     
     assign enable_rate = (current_state == S_WAIT);

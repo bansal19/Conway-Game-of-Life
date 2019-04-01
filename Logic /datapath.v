@@ -1,8 +1,9 @@
  module datapath(
-    input clk, enable, reset_n,ld_x, ld_y, ld_c, reset_score,
+    input clk, enable, reset_n,ld_x, ld_y, ld_c, reset_score, mouse_plot,
     input [4:0] register,
     input [5:0] addr,
-    input [39:0] data, 
+    input [39:0] data,
+    input [9:0] x_mouse, y_mouse,
     output [7:0] x_out,
     output [6:0] y_out,
     output [2:0] c_out,
@@ -14,6 +15,7 @@
     reg [11:0] life;
     wire [4:0] count; 
     wire [3:0] out;
+    wire [2:0] count4;
     wire reset_c;
     wire reset_s;
 
@@ -30,7 +32,7 @@
             y <= 7'd0;
             c <= 3'd0; 
         end
-        else begin 
+        else if (!mouse_plot) begin 
             if(ld_x)
                 x <= addr * 4;
                 life <= (data[39 - addr] == 1) ? life + 1 : life;
@@ -39,8 +41,39 @@
             if(ld_c)
                 c <= (data[39 - addr] == 0) ? 111 : 000;
          end
+         else begin // printing mouse
+             c <= 3'b101;
+             x <= x_mouse;
+             y <= y_mouse;
+         end         
     end
+    /*
+    always@(posedge clk)
+    begin: state_table 
+            case (current_state)
+                S_LOAD: next_state = ld_x ? S_WRITE : S_LOAD;
+                S_WRITE: next_state = ld_x ? S_LOAD : S_WRITE;
 
+            default:     next_state = S_LOAD;
+        endcase
+    end // state_table
+
+    // current_state registers
+    always@(posedge clk)
+    begin: state_FFs
+        if(!reset_n)
+            current_state <= S_LOAD;
+        else begin
+            if(current_state == S_WRITE)
+                begin if (count == {4{1'b1}})
+                    current_state <= next_state;
+                end
+            else
+                current_state <= next_state;
+        end
+    end // state_FFS
+    */
+    
     assign out = count; // (count != 0) ? count - 1: count;
     assign reset_c = reset_n & !ld_x & !ld_y;
     counter17 c0(
@@ -49,13 +82,38 @@
         .reset_n(reset_c),
         .clk(clk)
         );
+        
+    counter4 c1(
+        .out(count4),
+        .enable(enable),
+        .reset_n(reset_c),
+        .clk(clk)
+        );
     
     
-    assign x_out = x + out[1:0];
-    assign y_out = y + out[3:2];
+    assign x_out = !mouse_plot ? x + out[1:0] : x + count4[0];
+    assign y_out = !mouse_plot ? y + out[3:2] : y + count4[1];
     assign c_out = c;
     assign life_score = life;
 
+endmodule
+
+module counter4(out, enable, reset_n, clk);
+    input enable, reset_n, clk;
+    output reg [2:0] out;
+
+    always @(posedge clk)
+    begin
+        if (!reset_n)
+            out <= 3'b000;
+        else if (enable == 1'b1)
+            begin
+                if (out == 3'b100)
+                    out <= 3'b000;
+                else
+                    out <= out + 1'b1;
+            end
+    end 
 endmodule
 
 module counter17(out, enable, reset_n, clk);

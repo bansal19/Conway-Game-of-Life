@@ -116,20 +116,22 @@ module part2
         );
 endmodule
 
-module try(clk, reset_n, go, glide, explode, tumble, space, gun, clear, x, y, colour, life_score);
-    input clk, reset_n, go, glide, explode, tumble, space, gun, clear;
+module try(clk, reset_n, go, stop, glide, explode, tumble, space, gun, clear, x, y, colour, life_score, x_mouse, y_mouse, mouse_click);
+    input clk, reset_n, go, stop, glide, explode, tumble, space, gun, clear, mouse_click;
     output [2:0] colour;
     output [7:0] x;
     output [6:0] y;
     output [11:0] life_score;
+    input [9:0] x_mouse, y_mouse;
 
-    wire writeEn, reset_score;
-    wire enable,ld_x_wire,ld_y_wire,ld_c_wire;
+    wire writeEn, reset_score, logic, swap;
+	wire [2:0] adj_wire;
+    wire enable,ld_x_wire,ld_y_wire,ld_c_wire, mouse_plot_wire;
     wire [4:0] register;
-    wire [5:0] addr;
-    wire [39:0] data;
+    wire [5:0] addr_wire;
+    wire [39:0] data, temp_data;
 
-    // Instantiate datapath
+    // Instansiate datapath
 	// datapath d0(...);
     datapath d0(
         .clk(clk),
@@ -140,33 +142,45 @@ module try(clk, reset_n, go, glide, explode, tumble, space, gun, clear, x, y, co
         .ld_c(ld_c_wire),
         .reset_score(reset_score),
         .register(register),
-        .addr(addr),
+        .addr(addr_wire),
         .data(data),
+        .x_mouse(x_mouse),
+        .y_mouse(y_mouse),
+        .mouse_plot(mouse_plot_wire),
         .x_out(x),
         .y_out(y),
         .c_out(colour),
         .life_score(life_score)
         );
-    // Instantiate FSM control
+    // Instansiate FSM control
     // control c0(...);
     control c0(
         .clk(clk),
         .reset_n(reset_n),
         .reset_score(reset_score),
         .go(go),
+        .stop(stop),
         .glide(glide),
         .explode(explode),
         .tumble(tumble),
         .space(space),
         .gun(gun),
         .clear(clear),
+        .x_mouse(x_mouse),
+        .y_mouse(y_mouse),
+        .mouse_click(mouse_click),
+        .mouse_plot(mouse_plot_wire),
         .register(register),
-        .addr(addr),
+        .addr(addr_wire),
         .data(data),        
         .enable(enable),
         .ld_x(ld_x_wire),
         .ld_y(ld_y_wire),
         .ld_c(ld_c_wire),
-        .plot(writeEn)
+        .plot(writeEn),
+        .logic(logic),
+        .swap(swap),
+        .t(temp_data),
+	.adj(adj_wire)
         );
 endmodule
