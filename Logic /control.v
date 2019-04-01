@@ -81,7 +81,7 @@ module control(
                 S_LOAD_XYC: next_state = cycle ? S_CYCLE_0 : S_LOAD_XYC; 
                 S_CYCLE_0: next_state = (count30 == 5'b11110) ? (stop ? S_LOAD_REG : (mouse ? S_LOAD_MOUSE : S_LOGIC)) : S_LOAD_XYC;
                 S_LOGIC: next_state = (count_logic30 == 5'b11110) ? S_SWAP : S_LOGIC;
-                S_SWAP: next_state = (count_swap30 == 5'b11110) ? S_WAIT : S_SWAP;
+                S_SWAP: next_state = (count_swap30 == 5'b11110) ? S_LOAD_XYC : S_WAIT;
                 S_WAIT: next_state = (rate == {28{1'b0}}) ? S_LOAD_XYC : S_WAIT;
             default: next_state = S_LOAD_REG;
         endcase
@@ -285,6 +285,8 @@ module control(
 			end else begin
 				if(adj_score == 3'b011)
 					temp_write = temp_data | bitmask; //Any dead cell with exactly 3 live neighbors becomes a live cell, as if by reproduction.
+			     else
+			    	temp_write = temp_data;
 			    end
 		    end
 		7: temp_wren = 1'b1;
@@ -295,7 +297,6 @@ module control(
             	case(count_swap4)
 				0: begin
 					register_logic = count_swap30;
-					adj_score = 3'b110;
 					end
 	        	1:	begin
 	        		wren = 1'b1;
@@ -363,7 +364,7 @@ module control(
         );
 
     assign enable40 = (count16 == {4{1'b1}});
-    assign reset40 = (current_state != S_LOAD_REG && current_state != S_WAIT);
+    assign reset40 = (current_state != S_LOAD_REG && current_state != S_WAIT); 
     assign addr = count40;
     counter40 c2(
         .out(count40),
@@ -373,7 +374,7 @@ module control(
         );
 
     assign enable30 = ((count40 == 6'b100111) && enable40); // change if 40 not 39
-    assign reset30 = (current_state != S_LOAD_REG && current_state != S_WAIT);
+    assign reset30 = (current_state != S_LOAD_REG && current_state != S_WAIT); 
     assign register = count30;
     counter30 c1(
         .out(count30),

@@ -9,13 +9,13 @@ z2
 cModel Technology
 d/h/u13/c7/00/bansal19/Desktop/CSC258/Project
 vcontrol
-Z0 !s110 1554111264
+Z0 !s110 1554145552
 !i10b 1
-!s100 MH?bhi@I2lWG6?f;7L<QR2
-IGSz0aUGSh`BZ^?FM8ClmW1
+!s100 ohHWCI2KRhcL<=]9F@7WO2
+I1Fa^9;e[Qi>azEjeiW5HZ2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 d/h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic 
-Z3 w1554111260
+Z3 w1554145547
 Z4 8control.v
 Z5 Fcontrol.v
 L0 4
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1554111264.000000
+Z7 !s108 1554145552.000000
 Z8 !s107 onehot.v|ram40x32.v|control.v|datapath.v|part2.v|
 Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
 !i113 1
@@ -32,14 +32,14 @@ Z11 tCvgOpt 0
 vcounter16
 R0
 !i10b 1
-!s100 ^nM_CzbK;L5c?;zig<CQ>2
-I8C_TQK8`jLhYQ767:dGD:2
+!s100 d0=a^[^95Bc?Tm>zG5^3i2
+IWPP7I_^6_d2:0nzLZQ;C50
 R1
 R2
 R3
 R4
 R5
-L0 523
+L0 524
 R6
 r1
 !s85 0
@@ -74,14 +74,14 @@ R11
 vcounter30
 R0
 !i10b 1
-!s100 Z]boOa^OM9>_SDAXQ@eJS0
-IX0DkZn<IXiGdeK=HFikQb1
+!s100 8MVmTTfc0EUEIYQ71G9Y>0
+IE?hb2aV]fJLKbFPMj;Gcm3
 R1
 R2
 R3
 R4
 R5
-L0 559
+L0 560
 R6
 r1
 !s85 0
@@ -116,14 +116,14 @@ R11
 vcounter40
 R0
 !i10b 1
-!s100 _n@0_^]nQQciN<_[aJ3CD0
-I8W]e9]OGgUU0S2UKo1d3E2
+!s100 Yh:hBjSJnTdh0>@?6I3K62
+I25@:Zh;EOA08iT7PTCLR<0
 R1
 R2
 R3
 R4
 R5
-L0 541
+L0 542
 R6
 r1
 !s85 0
@@ -221,14 +221,14 @@ R11
 vrate_div
 R0
 !i10b 1
-!s100 ZCcOI5JYB=:W<1:8?CRoo3
-IOCOkW[e6ielPWiP8aFG@I1
+!s100 NOUNm>KUgAj;[X^cJlW6n0
+I^A^Oi_X[OTBYYaUHQzFWk2
 R1
 R2
 R3
 R4
 R5
-L0 577
+L0 578
 R6
 r1
 !s85 0

@@ -38,7 +38,7 @@ ls
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:06:37 on Apr 01,2019
+# Start time: 14:29:29 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -56,69 +56,10 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:06:37 on Apr 01,2019, Elapsed time: 0:00:00
+# End time: 14:29:32 on Apr 01,2019, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:06:37 on Apr 01,2019
-# Loading work.try
-# Loading work.datapath
-# Loading work.counter17
-# Loading work.counter4
-# Loading work.control
-# Loading work.counter30
-# Loading work.counter16
-# Loading work.counter40
-# Loading work.ram40x32
-# Loading altera_mf_ver.altsyncram
-# Loading work.rate_div
-# Loading work.onehot
-# Loading lpm_ver.lpm_decode
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "./258/proj/lab7_part2/lab7_part2/white.mif" for reading.
-# No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(264)
-#    Time: 0 ps  Iteration: 0  Instance: /try/c0/r0/altsyncram_component/m_default/altsyncram_inst
-# ERROR: cannot read ./258/proj/lab7_part2/lab7_part2/white.mif.
-# ** Warning: (vsim-7) Failed to open readmem file "./258/proj/lab7_part2/lab7_part2/white.ver" in read mode.
-# No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(48977)
-#    Time: 0 ps  Iteration: 0  Instance: /try/c0/r0/altsyncram_component/m_default/altsyncram_inst
-# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "./258/proj/lab7_part2/lab7_part2/white.mif" for reading.
-# No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(264)
-#    Time: 0 ps  Iteration: 0  Instance: /try/c0/r1/altsyncram_component/m_default/altsyncram_inst
-# ERROR: cannot read ./258/proj/lab7_part2/lab7_part2/white.mif.
-# ** Warning: (vsim-7) Failed to open readmem file "./258/proj/lab7_part2/lab7_part2/white.ver" in read mode.
-# No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(48977)
-#    Time: 0 ps  Iteration: 0  Instance: /try/c0/r1/altsyncram_component/m_default/altsyncram_inst
-# Can't move the Now cursor.
-# Can't move the Now cursor.
-do proj.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:18:29 on Apr 01,2019
-# vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
-# -- Compiling module datapath
-# -- Compiling module counter4
-# -- Compiling module counter17
-# -- Compiling module ram40x32
-# -- Compiling module onehot
-# -- Compiling module control
-# -- Compiling module counter16
-# -- Compiling module counter40
-# -- Compiling module counter30
-# -- Compiling module rate_div
-# -- Compiling module part2
-# -- Compiling module try
-# 
-# Top level modules:
-# 	part2
-# 	try
-# End time: 05:18:33 on Apr 01,2019, Elapsed time: 0:00:04
-# Errors: 0, Warnings: 0
-# End time: 05:18:34 on Apr 01,2019, Elapsed time: 0:11:57
-# Errors: 2, Warnings: 4
-# vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:18:34 on Apr 01,2019
+# Start time: 14:29:32 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -152,7 +93,7 @@ do proj.do
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:19:38 on Apr 01,2019
+# Start time: 14:36:30 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -170,12 +111,12 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:19:40 on Apr 01,2019, Elapsed time: 0:00:02
+# End time: 14:36:30 on Apr 01,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 05:19:43 on Apr 01,2019, Elapsed time: 0:01:09
+# End time: 14:36:31 on Apr 01,2019, Elapsed time: 0:06:59
 # Errors: 0, Warnings: 4
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:19:43 on Apr 01,2019
+# Start time: 14:36:31 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -209,7 +150,7 @@ do proj.do
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:22:29 on Apr 01,2019
+# Start time: 14:37:23 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -227,12 +168,12 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:22:29 on Apr 01,2019, Elapsed time: 0:00:00
+# End time: 14:37:28 on Apr 01,2019, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 0
-# End time: 05:22:29 on Apr 01,2019, Elapsed time: 0:02:46
+# End time: 14:37:29 on Apr 01,2019, Elapsed time: 0:00:58
 # Errors: 0, Warnings: 4
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:22:29 on Apr 01,2019
+# Start time: 14:37:29 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -263,11 +204,37 @@ do proj.do
 # ** Warning: (vsim-7) Failed to open readmem file "./258/proj/lab7_part2/lab7_part2/white.ver" in read mode.
 # No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(48977)
 #    Time: 0 ps  Iteration: 0  Instance: /try/c0/r1/altsyncram_component/m_default/altsyncram_inst
-# Can't move the Now cursor.
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:23:08 on Apr 01,2019
+# Start time: 14:48:34 on Apr 01,2019
+# vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
+# -- Compiling module datapath
+# -- Compiling module counter4
+# -- Compiling module counter17
+# -- Compiling module ram40x32
+# -- Compiling module onehot
+# -- Compiling module control
+# ** Error: (vlog-13069) ** while parsing file included at part2.v(3)
+# ** at control.v(288): near "else": syntax error, unexpected else.
+# -- Compiling module counter16
+# -- Compiling module counter40
+# -- Compiling module counter30
+# -- Compiling module rate_div
+# -- Compiling module part2
+# -- Compiling module try
+# End time: 14:48:35 on Apr 01,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /s/appspace/quartus-17.0.0.595/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./proj.do line 3
+# /s/appspace/quartus-17.0.0.595/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -timescale 1ns/1ns part2.v"
+
+do proj.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:49:03 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -285,12 +252,12 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:23:09 on Apr 01,2019, Elapsed time: 0:00:01
+# End time: 14:49:06 on Apr 01,2019, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
-# End time: 05:23:09 on Apr 01,2019, Elapsed time: 0:00:40
-# Errors: 1, Warnings: 4
+# End time: 14:49:07 on Apr 01,2019, Elapsed time: 0:11:38
+# Errors: 4, Warnings: 4
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:23:09 on Apr 01,2019
+# Start time: 14:49:07 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -324,7 +291,7 @@ do proj.do
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:28:03 on Apr 01,2019
+# Start time: 14:52:42 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -342,12 +309,12 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:28:09 on Apr 01,2019, Elapsed time: 0:00:06
+# End time: 14:52:42 on Apr 01,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 05:28:10 on Apr 01,2019, Elapsed time: 0:05:01
+# End time: 14:52:43 on Apr 01,2019, Elapsed time: 0:03:36
 # Errors: 0, Warnings: 4
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:28:10 on Apr 01,2019
+# Start time: 14:52:43 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -381,7 +348,7 @@ do proj.do
 do proj.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:34:24 on Apr 01,2019
+# Start time: 15:05:52 on Apr 01,2019
 # vlog -reportprogress 300 -timescale 1ns/1ns part2.v 
 # -- Compiling module datapath
 # -- Compiling module counter4
@@ -399,12 +366,12 @@ do proj.do
 # Top level modules:
 # 	part2
 # 	try
-# End time: 05:34:24 on Apr 01,2019, Elapsed time: 0:00:00
+# End time: 15:05:52 on Apr 01,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 05:34:25 on Apr 01,2019, Elapsed time: 0:06:15
+# End time: 15:05:52 on Apr 01,2019, Elapsed time: 0:13:09
 # Errors: 0, Warnings: 4
 # vsim -L altera_mf_ver -L lpm_ver try 
-# Start time: 05:34:25 on Apr 01,2019
+# Start time: 15:05:52 on Apr 01,2019
 # Loading work.try
 # Loading work.datapath
 # Loading work.counter17
@@ -435,3 +402,7 @@ do proj.do
 # ** Warning: (vsim-7) Failed to open readmem file "./258/proj/lab7_part2/lab7_part2/white.ver" in read mode.
 # No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/17.0std/595/l64/work/modelsim/eda/sim_lib/altera_mf.v(48977)
 #    Time: 0 ps  Iteration: 0  Instance: /try/c0/r1/altsyncram_component/m_default/altsyncram_inst
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
