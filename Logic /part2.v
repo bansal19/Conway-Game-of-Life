@@ -1,5 +1,6 @@
 // Part 2 skeleton
-
+`include "datapath.v"
+`include "control.v"
 
 module part2
 	(

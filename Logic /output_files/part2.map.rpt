@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Sun Mar 31 13:19:02 2019
+Sun Mar 31 21:46:26 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -21,23 +21,26 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
  15. Source assignments for control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated
- 16. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 17. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 22. Parameter Settings for User Entity Instance: control:c0|ram40x32:r0|altsyncram:altsyncram_component
- 23. Parameter Settings for User Entity Instance: control:c0|onehot:o0|lpm_decode:LPM_DECODE_component
- 24. altsyncram Parameter Settings by Entity Instance
- 25. altpll Parameter Settings by Entity Instance
- 26. Port Connectivity Checks: "control:c0|onehot:o0"
- 27. Port Connectivity Checks: "datapath:d0|counter17:c0"
- 28. Port Connectivity Checks: "datapath:d0"
- 29. Post-Synthesis Netlist Statistics for Top Partition
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
- 32. Analysis & Synthesis Suppressed Messages
+ 16. Source assignments for control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated
+ 17. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 23. Parameter Settings for User Entity Instance: control:c0|ram40x32:r0|altsyncram:altsyncram_component
+ 24. Parameter Settings for User Entity Instance: control:c0|ram40x32:r1|altsyncram:altsyncram_component
+ 25. Parameter Settings for User Entity Instance: control:c0|onehot:o0|lpm_decode:LPM_DECODE_component
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. altpll Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "control:c0|onehot:o0"
+ 29. Port Connectivity Checks: "control:c0|ram40x32:r1"
+ 30. Port Connectivity Checks: "datapath:d0|counter17:c0"
+ 31. Port Connectivity Checks: "datapath:d0"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+ 35. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -64,13 +67,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar 31 13:19:02 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 31 21:46:25 2019       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 88                                          ;
+; Total registers                 ; 89                                          ;
 ; Total pins                      ; 50                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 58,880                                      ;
@@ -236,16 +239,16 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 304            ;
+; Estimate of Logic utilization (ALMs needed) ; 121            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 458            ;
+; Combinational ALUT usage for logic          ; 196            ;
 ;     -- 7 input functions                    ; 2              ;
-;     -- 6 input functions                    ; 146            ;
-;     -- 5 input functions                    ; 71             ;
-;     -- 4 input functions                    ; 50             ;
-;     -- <=3 input functions                  ; 189            ;
+;     -- 6 input functions                    ; 42             ;
+;     -- 5 input functions                    ; 31             ;
+;     -- 4 input functions                    ; 35             ;
+;     -- <=3 input functions                  ; 86             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 88             ;
+; Dedicated logic registers                   ; 89             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 50             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -257,9 +260,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 108            ;
-; Total fan-out                               ; 2911           ;
-; Average fan-out                             ; 4.18           ;
+; Maximum fan-out                             ; 109            ;
+; Total fan-out                               ; 1724           ;
+; Average fan-out                             ; 3.96           ;
 +---------------------------------------------+----------------+
 
 
@@ -268,19 +271,19 @@ agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |part2                                                  ; 458 (0)             ; 88 (0)                    ; 58880             ; 0          ; 50   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
-;    |control:c0|                                         ; 364 (321)           ; 41 (6)                    ; 1280              ; 0          ; 0    ; 0            ; |part2|control:c0                                                                                     ; control                ; work         ;
+; |part2                                                  ; 196 (1)             ; 89 (0)                    ; 58880             ; 0          ; 50   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+;    |control:c0|                                         ; 99 (56)             ; 42 (7)                    ; 1280              ; 0          ; 0    ; 0            ; |part2|control:c0                                                                                     ; control                ; work         ;
 ;       |counter16:c0|                                    ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter16:c0                                                                        ; counter16              ; work         ;
 ;       |counter16:logic_1|                               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter16:logic_1                                                                   ; counter16              ; work         ;
-;       |counter30:c1|                                    ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter30:c1                                                                        ; counter30              ; work         ;
+;       |counter30:c1|                                    ; 7 (7)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter30:c1                                                                        ; counter30              ; work         ;
 ;       |counter30:c30l|                                  ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter30:c30l                                                                      ; counter30              ; work         ;
 ;       |counter30:w0|                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter30:w0                                                                        ; counter30              ; work         ;
-;       |counter40:c2|                                    ; 9 (9)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter40:c2                                                                        ; counter40              ; work         ;
+;       |counter40:c2|                                    ; 8 (8)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter40:c2                                                                        ; counter40              ; work         ;
 ;       |counter40:c3|                                    ; 9 (9)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0|counter40:c3                                                                        ; counter40              ; work         ;
 ;       |ram40x32:r0|                                     ; 0 (0)               ; 0 (0)                     ; 1280              ; 0          ; 0    ; 0            ; |part2|control:c0|ram40x32:r0                                                                         ; ram40x32               ; work         ;
 ;          |altsyncram:altsyncram_component|              ; 0 (0)               ; 0 (0)                     ; 1280              ; 0          ; 0    ; 0            ; |part2|control:c0|ram40x32:r0|altsyncram:altsyncram_component                                         ; altsyncram             ; work         ;
 ;             |altsyncram_m0r1:auto_generated|            ; 0 (0)               ; 0 (0)                     ; 1280              ; 0          ; 0    ; 0            ; |part2|control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated          ; altsyncram_m0r1        ; work         ;
-;    |datapath:d0|                                        ; 23 (15)             ; 17 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0                                                                                    ; datapath               ; work         ;
+;    |datapath:d0|                                        ; 25 (17)             ; 17 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0                                                                                    ; datapath               ; work         ;
 ;       |counter17:c0|                                    ; 8 (8)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0|counter17:c0                                                                       ; counter17              ; work         ;
 ;    |vga_adapter:VGA|                                    ; 71 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
@@ -309,132 +312,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |part2|control:c0|current_state                                                                                                                                                     ;
-+-------------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+-----------------------+-------------------------+
-; Name                          ; current_state.S_LOAD_XYC ; current_state.S_LOAD_PRESET ; current_state.S_LOAD_REG_WAIT ; current_state.S_LOAD_REG ; current_state.S_LOGIC ; current_state.S_CYCLE_0 ;
-+-------------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+-----------------------+-------------------------+
-; current_state.S_LOAD_REG      ; 0                        ; 0                           ; 0                             ; 0                        ; 0                     ; 0                       ;
-; current_state.S_LOAD_REG_WAIT ; 0                        ; 0                           ; 1                             ; 1                        ; 0                     ; 0                       ;
-; current_state.S_LOAD_PRESET   ; 0                        ; 1                           ; 0                             ; 1                        ; 0                     ; 0                       ;
-; current_state.S_LOAD_XYC      ; 1                        ; 0                           ; 0                             ; 1                        ; 0                     ; 0                       ;
-; current_state.S_CYCLE_0       ; 0                        ; 0                           ; 0                             ; 1                        ; 0                     ; 1                       ;
-; current_state.S_LOGIC         ; 0                        ; 0                           ; 0                             ; 1                        ; 1                     ; 0                       ;
-+-------------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+-----------------------+-------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |part2|control:c0|current_state                                                                                                                                                                            ;
++-------------------------------+----------------------+-----------------------+-------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+
+; Name                          ; current_state.S_SWAP ; current_state.S_LOGIC ; current_state.S_CYCLE_0 ; current_state.S_LOAD_XYC ; current_state.S_LOAD_PRESET ; current_state.S_LOAD_REG_WAIT ; current_state.S_LOAD_REG ;
++-------------------------------+----------------------+-----------------------+-------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+
+; current_state.S_LOAD_REG      ; 0                    ; 0                     ; 0                       ; 0                        ; 0                           ; 0                             ; 0                        ;
+; current_state.S_LOAD_REG_WAIT ; 0                    ; 0                     ; 0                       ; 0                        ; 0                           ; 1                             ; 1                        ;
+; current_state.S_LOAD_PRESET   ; 0                    ; 0                     ; 0                       ; 0                        ; 1                           ; 0                             ; 1                        ;
+; current_state.S_LOAD_XYC      ; 0                    ; 0                     ; 0                       ; 1                        ; 0                           ; 0                             ; 1                        ;
+; current_state.S_CYCLE_0       ; 0                    ; 0                     ; 1                       ; 0                        ; 0                           ; 0                             ; 1                        ;
+; current_state.S_LOGIC         ; 0                    ; 1                     ; 0                       ; 0                        ; 0                           ; 0                             ; 1                        ;
+; current_state.S_SWAP          ; 1                    ; 0                     ; 0                       ; 0                        ; 0                           ; 0                             ; 1                        ;
++-------------------------------+----------------------+-----------------------+-------------------------+--------------------------+-----------------------------+-------------------------------+--------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                         ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
-+-----------------------------------------------------+------------------------------+------------------------+
-; control:c0|check_set                                ; control:c0|WideOr18          ; yes                    ;
-; control:c0|reg_above[8]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[4]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[6]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[2]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[7]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[3]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[5]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[1]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[24]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[20]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[22]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[18]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[16]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[12]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[14]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[10]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[23]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[19]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[21]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[17]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[15]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[11]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[13]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[9]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[39]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[35]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[37]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[33]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[36]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[38]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[34]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[32]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[28]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[30]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[26]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[31]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[27]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[29]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[25]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_above[0]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[8]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[4]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[6]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[2]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[7]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[3]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[5]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[1]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[24]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[20]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[22]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[18]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[16]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[12]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[14]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[10]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[23]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[19]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[21]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[17]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[15]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[11]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[13]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[9]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[39]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[35]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[37]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[33]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[36]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[38]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[34]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[32]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[28]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[30]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[26]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[31]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[27]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[29]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[25]                            ; control:c0|Decoder6          ; yes                    ;
-; control:c0|reg_below[0]                             ; control:c0|Decoder6          ; yes                    ;
-; control:c0|register_logic[0]                        ; control:c0|register_logic[3] ; yes                    ;
-; control:c0|register_logic[1]                        ; control:c0|register_logic[3] ; yes                    ;
-; control:c0|register_logic[2]                        ; control:c0|register_logic[3] ; yes                    ;
-; control:c0|register_logic[3]                        ; control:c0|register_logic[3] ; yes                    ;
-; control:c0|preset_state.P_TUMBLE_2574               ; GND                          ; yes                    ;
-; control:c0|preset_state.P_EXPLODE_2587              ; GND                          ; yes                    ;
-; control:c0|preset_state.P_SPACE_2561                ; GND                          ; yes                    ;
-; control:c0|preset_state.P_GLIDE_2600                ; GND                          ; yes                    ;
-; Number of user-specified and inferred latches = 89  ;                              ;                        ;
-+-----------------------------------------------------+------------------------------+------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; control:c0|preset_state.P_TUMBLE_3468              ; GND                 ; yes                    ;
+; control:c0|preset_state.P_EXPLODE_3481             ; GND                 ; yes                    ;
+; control:c0|check_set                               ; control:c0|WideOr21 ; yes                    ;
+; control:c0|preset_state.P_SPACE_3455               ; GND                 ; yes                    ;
+; control:c0|preset_state.P_GLIDE_3494               ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; datapath:d0|x[1]                      ; Merged with datapath:d0|x[0]           ;
-; datapath:d0|y[0,1]                    ; Merged with datapath:d0|x[0]           ;
-; datapath:d0|c[1,2]                    ; Merged with datapath:d0|c[0]           ;
-; datapath:d0|x[0]                      ; Stuck at GND due to stuck port data_in ;
-; control:c0|current_state~2            ; Lost fanout                            ;
-; control:c0|current_state~3            ; Lost fanout                            ;
-; Total Number of Removed Registers = 8 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; control:c0|counter4:swap4|out[0..2]    ; Stuck at GND due to stuck port data_in ;
+; control:c0|counter30:swap|out[0..4]    ; Stuck at GND due to stuck port data_in ;
+; datapath:d0|x[1]                       ; Merged with datapath:d0|x[0]           ;
+; datapath:d0|y[0,1]                     ; Merged with datapath:d0|x[0]           ;
+; datapath:d0|c[1,2]                     ; Merged with datapath:d0|c[0]           ;
+; datapath:d0|x[0]                       ; Stuck at GND due to stuck port data_in ;
+; control:c0|current_state~2             ; Lost fanout                            ;
+; control:c0|current_state~3             ; Lost fanout                            ;
+; control:c0|current_state~4             ; Lost fanout                            ;
+; control:c0|current_state~5             ; Lost fanout                            ;
+; Total Number of Removed Registers = 18 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -442,12 +366,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 88    ;
-; Number of registers using Synchronous Clear  ; 33    ;
+; Total registers                              ; 89    ;
+; Number of registers using Synchronous Clear  ; 34    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Clock Enable       ; 48    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -457,28 +381,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |part2|datapath:d0|y[4]                                                                                  ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[6]                                             ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter30:c1|out[0]                                                                    ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |part2|datapath:d0|x[2]                                                                                  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[1]                                             ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter30:c1|out[4]                                                                    ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|control:c0|counter16:c0|out[3]                                                                    ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter30:w0|out[4]                                                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|control:c0|counter16:logic_1|out[3]                                                               ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|datapath:d0|counter17:c0|out[0]                                                                   ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter40:c2|out[1]                                                                    ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter40:c3|out[1]                                                                    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter30:c30l|out[1]                                                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter30:c30l|out[4]                                                                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|datapath:d0|counter17:c0|out[2]                                                                   ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter40:c2|out[0]                                                                    ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|control:c0|counter40:c3|out[0]                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|control:c0|counter16:logic_1|out[1]                                                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[1] ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|current_state                                                                          ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|Mux5                                                                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |part2|control:c0|adj_score                                                                              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|control:c0|adj_score                                                                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |part2|control:c0|address[0]                                                                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |part2|control:c0|Mux12                                                                                  ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |part2|control:c0|data_write                                                                             ;
-; 7:1                ; 27 bits   ; 108 LEs       ; 81 LEs               ; 27 LEs                 ; No         ; |part2|control:c0|data_write[7]                                                                          ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|Mux8                                                                                   ;
-; 25:1               ; 3 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|Mux7                                                                                   ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|Mux5                                                                                   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |part2|control:c0|address[0]                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 
 
@@ -493,6 +408,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 +--------------------------------------------------------------------------------------------------------------+
 ; Source assignments for control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                             ;
 +---------------------------------+--------------------+------+------------------------------------------------+
@@ -1049,6 +973,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control:c0|ram40x32:r1|altsyncram:altsyncram_component ;
++------------------------------------+--------------------------------------------+-------------------+
+; Parameter Name                     ; Value                                      ; Type              ;
++------------------------------------+--------------------------------------------+-------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped           ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY      ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE    ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped           ;
+; OPERATION_MODE                     ; SINGLE_PORT                                ; Untyped           ;
+; WIDTH_A                            ; 40                                         ; Signed Integer    ;
+; WIDTHAD_A                          ; 5                                          ; Signed Integer    ;
+; NUMWORDS_A                         ; 32                                         ; Signed Integer    ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped           ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped           ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped           ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped           ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped           ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped           ;
+; WIDTH_B                            ; 1                                          ; Untyped           ;
+; WIDTHAD_B                          ; 1                                          ; Untyped           ;
+; NUMWORDS_B                         ; 1                                          ; Untyped           ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped           ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped           ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped           ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped           ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped           ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped           ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped           ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped           ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped           ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped           ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped           ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Signed Integer    ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped           ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped           ;
+; BYTE_SIZE                          ; 8                                          ; Untyped           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped           ;
+; INIT_FILE                          ; ./258/proj/lab7_part2/lab7_part2/white.mif ; Untyped           ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped           ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                     ; Untyped           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                     ; Untyped           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped           ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped           ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped           ;
+; DEVICE_FAMILY                      ; Cyclone V                                  ; Untyped           ;
+; CBXI_PARAMETER                     ; altsyncram_m0r1                            ; Untyped           ;
++------------------------------------+--------------------------------------------+-------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: control:c0|onehot:o0|lpm_decode:LPM_DECODE_component ;
 +------------------------+------------+-------------------------------------------------------------+
@@ -1073,7 +1058,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------+
 ; Name                                      ; Value                                                  ;
 +-------------------------------------------+--------------------------------------------------------+
-; Number of entity instances                ; 2                                                      ;
+; Number of entity instances                ; 3                                                      ;
 ; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory                 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                              ;
 ;     -- WIDTH_A                            ; 3                                                      ;
@@ -1086,6 +1071,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
 ; Entity Instance                           ; control:c0|ram40x32:r0|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                            ;
+;     -- WIDTH_A                            ; 40                                                     ;
+;     -- NUMWORDS_A                         ; 32                                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 1                                                      ;
+;     -- NUMWORDS_B                         ; 1                                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
+; Entity Instance                           ; control:c0|ram40x32:r1|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                            ;
 ;     -- WIDTH_A                            ; 40                                                     ;
 ;     -- NUMWORDS_A                         ; 32                                                     ;
@@ -1122,45 +1118,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                                                                                      ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; data ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (6 bits) it drives.  Extra input bit(s) "data[5..1]" will be connected to GND. ;
-; eq0  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq1  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq2  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq3  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq4  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq5  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq6  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq7  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq8  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq9  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq10 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq11 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq12 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq13 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq14 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq15 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq16 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq17 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq18 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq19 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq20 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq21 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq22 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq23 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq24 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq25 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq26 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq27 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq28 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq29 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq30 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq31 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq32 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq33 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq34 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq35 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq36 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq37 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; eq38 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
 ; eq40 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
 ; eq41 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
 ; eq42 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
@@ -1188,6 +1145,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control:c0|ram40x32:r1"                                                                                                                           ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "address[4..4]" will be connected to GND. ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "datapath:d0|counter17:c0"                                                             ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1211,27 +1177,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 88                          ;
+; arriav_ff             ; 89                          ;
 ;     CLR SCLR          ; 10                          ;
-;     ENA               ; 31                          ;
+;     ENA               ; 27                          ;
 ;     ENA CLR SCLR      ; 10                          ;
 ;     ENA SCLR          ; 11                          ;
-;     SCLR              ; 2                           ;
-;     plain             ; 24                          ;
-; arriav_lcell_comb     ; 459                         ;
+;     SCLR              ; 3                           ;
+;     plain             ; 28                          ;
+; arriav_lcell_comb     ; 197                         ;
 ;     arith             ; 38                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 29                          ;
 ;         2 data inputs ; 8                           ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 409                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 119                         ;
-;         4 data inputs ; 50                          ;
-;         5 data inputs ; 71                          ;
-;         6 data inputs ; 146                         ;
+;     normal            ; 147                         ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 35                          ;
+;         5 data inputs ; 31                          ;
+;         6 data inputs ; 42                          ;
 ;     shared            ; 10                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
@@ -1241,8 +1207,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 49                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.37                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1251,7 +1217,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1261,29 +1227,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Mar 31 13:18:02 2019
+    Info: Processing started: Sun Mar 31 21:46:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 5 design units, including 5 entities, in source file control.v
+Info (12021): Found 6 design units, including 6 entities, in source file control.v
     Info (12023): Found entity 1: onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /onehot.v Line: 40
     Info (12023): Found entity 2: control File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 3
-    Info (12023): Found entity 3: counter16 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 387
-    Info (12023): Found entity 4: counter40 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 405
-    Info (12023): Found entity 5: counter30 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 423
+    Info (12023): Found entity 3: counter4 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 427
+    Info (12023): Found entity 4: counter16 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 445
+    Info (12023): Found entity 5: counter40 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 463
+    Info (12023): Found entity 6: counter30 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 481
 Info (12021): Found 2 design units, including 2 entities, in source file datapath.v
     Info (12023): Found entity 1: datapath File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 1
     Info (12023): Found entity 2: counter17 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 61
 Info (12021): Found 2 design units, including 2 entities, in source file part2.v
-    Info (12023): Found entity 1: part2 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 4
-    Info (12023): Found entity 2: try File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 118
-Warning (10236): Verilog HDL Implicit Net warning at control.v(283): created implicit net for "reset30w" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 283
-Warning (10236): Verilog HDL Implicit Net warning at control.v(300): created implicit net for "set_value" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 300
-Warning (10236): Verilog HDL Implicit Net warning at control.v(368): created implicit net for "bitmask" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 368
+    Info (12023): Found entity 1: part2 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 5
+    Info (12023): Found entity 2: try File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 119
+Warning (10236): Verilog HDL Implicit Net warning at control.v(314): created implicit net for "reset30w" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 314
+Warning (10236): Verilog HDL Implicit Net warning at control.v(339): created implicit net for "set_value" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 339
 Info (12127): Elaborating entity "part2" for the top level hierarchy
 Warning (12125): Using design file vga_adapter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga_adapter File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 78
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 67
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 68
 Warning (12125): Using design file vga_address_translator.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga_address_translator File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_address_translator.v Line: 4
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 192
@@ -1340,135 +1306,174 @@ Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga
 Warning (12125): Using design file vga_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga_controller File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_controller.v Line: 9
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /vga_adapter.v Line: 252
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 93
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 94
 Warning (10230): Verilog HDL assignment warning at datapath.v(35): truncated value with size 32 to match size of target (8) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 35
 Warning (10230): Verilog HDL assignment warning at datapath.v(36): truncated value with size 32 to match size of target (12) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 36
 Warning (10230): Verilog HDL assignment warning at datapath.v(38): truncated value with size 32 to match size of target (7) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 38
 Warning (10230): Verilog HDL assignment warning at datapath.v(40): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 40
 Warning (10230): Verilog HDL assignment warning at datapath.v(44): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 44
 Info (12128): Elaborating entity "counter17" for hierarchy "datapath:d0|counter17:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /datapath.v Line: 51
-Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 115
+Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 116
 Warning (10036): Verilog HDL or VHDL warning at control.v(23): object "current_reg" assigned a value but never read File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 23
-Warning (10240): Verilog HDL Always Construct warning at control.v(68): inferring latch(es) for variable "preset_state", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 68
-Warning (10230): Verilog HDL assignment warning at control.v(173): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 173
-Warning (10230): Verilog HDL assignment warning at control.v(176): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 176
-Warning (10230): Verilog HDL assignment warning at control.v(180): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 180
-Warning (10230): Verilog HDL assignment warning at control.v(187): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 187
-Warning (10230): Verilog HDL assignment warning at control.v(188): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 188
-Warning (10230): Verilog HDL assignment warning at control.v(191): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 191
-Warning (10230): Verilog HDL assignment warning at control.v(195): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 195
-Warning (10230): Verilog HDL assignment warning at control.v(197): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 197
+Warning (10240): Verilog HDL Always Construct warning at control.v(72): inferring latch(es) for variable "preset_state", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 72
+Warning (10230): Verilog HDL assignment warning at control.v(178): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 178
+Warning (10230): Verilog HDL assignment warning at control.v(181): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 181
+Warning (10230): Verilog HDL assignment warning at control.v(185): truncated value with size 32 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 185
+Warning (10230): Verilog HDL assignment warning at control.v(192): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 192
+Warning (10230): Verilog HDL assignment warning at control.v(193): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 193
+Warning (10230): Verilog HDL assignment warning at control.v(196): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 196
+Warning (10230): Verilog HDL assignment warning at control.v(200): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 200
 Warning (10230): Verilog HDL assignment warning at control.v(202): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 202
-Warning (10230): Verilog HDL assignment warning at control.v(203): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 203
-Warning (10230): Verilog HDL assignment warning at control.v(205): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 205
-Warning (10270): Verilog HDL Case Statement warning at control.v(170): incomplete case statement has no default case item File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 170
-Warning (10240): Verilog HDL Always Construct warning at control.v(85): inferring latch(es) for variable "check_set", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Warning (10240): Verilog HDL Always Construct warning at control.v(85): inferring latch(es) for variable "reg_below", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Warning (10240): Verilog HDL Always Construct warning at control.v(85): inferring latch(es) for variable "register_logic", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Warning (10240): Verilog HDL Always Construct warning at control.v(85): inferring latch(es) for variable "reg_above", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Warning (10230): Verilog HDL assignment warning at control.v(255): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 255
-Warning (10230): Verilog HDL assignment warning at control.v(264): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 264
-Warning (10230): Verilog HDL assignment warning at control.v(274): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 274
-Warning (10230): Verilog HDL assignment warning at control.v(283): truncated value with size 32 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 283
-Warning (10230): Verilog HDL assignment warning at control.v(300): truncated value with size 6 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 300
-Warning (10230): Verilog HDL assignment warning at control.v(368): truncated value with size 40 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 368
-Info (10041): Inferred latch for "reg_above[0]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[1]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[2]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[3]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[4]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[5]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[6]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[7]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[8]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[9]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[10]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[11]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[12]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[13]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[14]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[15]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[16]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[17]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[18]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[19]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[20]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[21]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[22]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[23]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[24]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[25]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[26]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[27]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[28]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[29]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[30]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[31]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[32]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[33]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[34]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[35]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[36]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[37]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[38]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_above[39]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "register_logic[0]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "register_logic[1]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "register_logic[2]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "register_logic[3]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[0]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[1]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[2]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[3]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[4]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[5]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[6]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[7]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[8]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[9]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[10]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[11]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[12]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[13]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[14]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[15]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[16]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[17]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[18]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[19]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[20]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[21]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[22]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[23]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[24]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[25]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[26]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[27]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[28]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[29]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[30]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[31]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[32]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[33]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[34]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[35]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[36]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[37]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[38]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "reg_below[39]" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "check_set" at control.v(85) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-Info (10041): Inferred latch for "preset_state.P_CLEAR" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (10041): Inferred latch for "preset_state.P_GUN" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (10041): Inferred latch for "preset_state.P_SPACE" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (10041): Inferred latch for "preset_state.P_TUMBLE" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (10041): Inferred latch for "preset_state.P_EXPLODE" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (10041): Inferred latch for "preset_state.P_GLIDE" at control.v(70) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 70
-Info (12128): Elaborating entity "counter16" for hierarchy "control:c0|counter16:logic_1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 234
-Info (12128): Elaborating entity "counter40" for hierarchy "control:c0|counter40:c3" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 243
-Info (12128): Elaborating entity "counter30" for hierarchy "control:c0|counter30:c30l" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 252
+Warning (10230): Verilog HDL assignment warning at control.v(207): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 207
+Warning (10230): Verilog HDL assignment warning at control.v(208): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 208
+Warning (10230): Verilog HDL assignment warning at control.v(210): truncated value with size 32 to match size of target (3) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 210
+Warning (10230): Verilog HDL assignment warning at control.v(229): truncated value with size 5 to match size of target (4) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 229
+Warning (10270): Verilog HDL Case Statement warning at control.v(104): incomplete case statement has no default case item File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 104
+Info (10264): Verilog HDL Case Statement information at control.v(104): all case item expressions in this case statement are onehot File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 104
+Warning (10240): Verilog HDL Always Construct warning at control.v(89): inferring latch(es) for variable "check_set", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Warning (10240): Verilog HDL Always Construct warning at control.v(89): inferring latch(es) for variable "temp_write", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Warning (10240): Verilog HDL Always Construct warning at control.v(89): inferring latch(es) for variable "reg_below", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Warning (10240): Verilog HDL Always Construct warning at control.v(89): inferring latch(es) for variable "register_logic", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Warning (10240): Verilog HDL Always Construct warning at control.v(89): inferring latch(es) for variable "reg_above", which holds its previous value in one or more paths through the always construct File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Warning (10230): Verilog HDL assignment warning at control.v(339): truncated value with size 6 to match size of target (1) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 339
+Info (10041): Inferred latch for "reg_above[0]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[1]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[2]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[3]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[4]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[5]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[6]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[7]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[8]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[9]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[10]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[11]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[12]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[13]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[14]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[15]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[16]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[17]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[18]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[19]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[20]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[21]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[22]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[23]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[24]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[25]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[26]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[27]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[28]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[29]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[30]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[31]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[32]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[33]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[34]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[35]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[36]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[37]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[38]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_above[39]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "register_logic[0]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "register_logic[1]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "register_logic[2]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "register_logic[3]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[0]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[1]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[2]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[3]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[4]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[5]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[6]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[7]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[8]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[9]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[10]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[11]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[12]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[13]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[14]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[15]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[16]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[17]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[18]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[19]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[20]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[21]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[22]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[23]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[24]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[25]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[26]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[27]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[28]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[29]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[30]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[31]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[32]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[33]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[34]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[35]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[36]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[37]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[38]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "reg_below[39]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[0]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[1]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[2]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[3]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[4]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[5]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[6]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[7]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[8]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[9]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[10]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[11]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[12]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[13]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[14]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[15]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[16]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[17]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[18]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[19]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[20]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[21]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[22]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[23]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[24]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[25]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[26]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[27]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[28]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[29]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[30]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[31]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[32]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[33]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[34]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[35]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[36]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[37]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[38]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "temp_write[39]" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "check_set" at control.v(89) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 89
+Info (10041): Inferred latch for "preset_state.P_CLEAR" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (10041): Inferred latch for "preset_state.P_GUN" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (10041): Inferred latch for "preset_state.P_SPACE" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (10041): Inferred latch for "preset_state.P_TUMBLE" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (10041): Inferred latch for "preset_state.P_EXPLODE" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (10041): Inferred latch for "preset_state.P_GLIDE" at control.v(74) File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 74
+Info (12128): Elaborating entity "counter30" for hierarchy "control:c0|counter30:swap" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 248
+Info (12128): Elaborating entity "counter4" for hierarchy "control:c0|counter4:swap4" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 256
+Info (12128): Elaborating entity "counter16" for hierarchy "control:c0|counter16:logic_1" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 265
+Info (12128): Elaborating entity "counter40" for hierarchy "control:c0|counter40:c3" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 274
 Warning (12125): Using design file ram40x32.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: ram40x32 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 40
-Info (12128): Elaborating entity "ram40x32" for hierarchy "control:c0|ram40x32:r0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 298
+Info (12128): Elaborating entity "ram40x32" for hierarchy "control:c0|ram40x32:r0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 329
 Info (12128): Elaborating entity "altsyncram" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
 Info (12130): Elaborated megafunction instantiation "control:c0|ram40x32:r0|altsyncram:altsyncram_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
 Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsyncram_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /ram40x32.v Line: 86
@@ -1490,7 +1495,7 @@ Info (12133): Instantiated megafunction "control:c0|ram40x32:r0|altsyncram:altsy
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m0r1.tdf
     Info (12023): Found entity 1: altsyncram_m0r1 File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_m0r1" for hierarchy "control:c0|ram40x32:r0|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "onehot" for hierarchy "control:c0|onehot:o0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 367
+Info (12128): Elaborating entity "onehot" for hierarchy "control:c0|onehot:o0" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 406
 Info (12128): Elaborating entity "lpm_decode" for hierarchy "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /onehot.v Line: 313
 Info (12130): Elaborated megafunction instantiation "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /onehot.v Line: 313
 Info (12133): Instantiated megafunction "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component" with the following parameter: File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /onehot.v Line: 313
@@ -1500,44 +1505,78 @@ Info (12133): Instantiated megafunction "control:c0|onehot:o0|lpm_decode:LPM_DEC
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_l5f.tdf
     Info (12023): Found entity 1: decode_l5f File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/decode_l5f.tdf Line: 23
 Info (12128): Elaborating entity "decode_l5f" for hierarchy "control:c0|onehot:o0|lpm_decode:LPM_DECODE_component|decode_l5f:auto_generated" File: /s/appspace/quartus/quartus/libraries/megafunctions/lpm_decode.tdf Line: 77
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[0]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 37
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[1]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 61
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[2]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 85
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[3]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 109
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[4]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 133
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[5]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 157
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[6]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 181
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[7]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 205
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[8]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 229
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[9]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 253
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[10]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 277
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[11]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 301
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[12]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 325
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[13]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 349
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[14]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 373
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[15]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 397
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[16]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 421
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[17]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 445
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[18]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 469
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[19]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 493
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[20]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 517
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[21]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 541
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[22]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 565
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[23]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 589
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[24]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 613
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[25]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 637
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[26]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 661
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[27]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 685
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[28]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 709
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[29]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 733
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[30]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 757
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[31]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 781
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[32]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 805
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[33]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 829
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[34]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 853
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[35]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 877
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[36]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 901
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[37]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 925
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[38]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 949
+        Warning (14320): Synthesized away node "control:c0|ram40x32:r1|altsyncram:altsyncram_component|altsyncram_m0r1:auto_generated|q_a[39]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altsyncram_m0r1.tdf Line: 973
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch control:c0|check_set has unsafe behavior File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|current_state.S_LOAD_PRESET File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 29
-Warning (13012): Latch control:c0|register_logic[0] has unsafe behavior File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|counter30:c30l|out[0] File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 427
-Warning (13012): Latch control:c0|register_logic[1] has unsafe behavior File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|counter16:logic_1|out[2] File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 391
-Warning (13012): Latch control:c0|register_logic[2] has unsafe behavior File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|counter16:logic_1|out[2] File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 391
-Warning (13012): Latch control:c0|register_logic[3] has unsafe behavior File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|counter16:logic_1|out[2] File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 391
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:c0|current_state.S_LOAD_PRESET File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /control.v Line: 31
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 31
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 32
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /output_files/part2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /db/altpll_80u.tdf Line: 34
     Info: Must be connected
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[4]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[5]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[6]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[7]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[8]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[9]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 22
-Info (21057): Implemented 576 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[4]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[5]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[6]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[7]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[8]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[9]" File: /h/u13/c7/00/bansal19/Desktop/CSC258/Project/Logic /part2.v Line: 23
+Info (21057): Implemented 314 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 476 logic cells
+    Info (21061): Implemented 214 logic cells
     Info (21064): Implemented 49 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 1109 megabytes
-    Info: Processing ended: Sun Mar 31 13:19:03 2019
-    Info: Elapsed time: 00:01:01
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
+    Info: Peak virtual memory: 1110 megabytes
+    Info: Processing ended: Sun Mar 31 21:46:26 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+
